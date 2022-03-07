@@ -1,7 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}{{ parent() }} - Accueil {% endblock %}
+
 {% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('danger') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
     <h1>Bonjour</h1>
     {% if app.user %}
         <a href="{{ path('app_logout') }}">Se déconnecter</a>
