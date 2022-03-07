@@ -1,21 +1,37 @@
-version: '3'
-
+version: '3.7'
 services:
-###> doctrine/doctrine-bundle ###
-  database:
-    image: postgres:${POSTGRES_VERSION:-13}-alpine
-    environment:
-      POSTGRES_DB: ${POSTGRES_DB:-app}
-      # You should definitely change the password in production
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ChangeMe}
-      POSTGRES_USER: ${POSTGRES_USER:-symfony}
+  symfony:
+    build: .
+    container_name: symfony.wiredbeauty
+    #    restart: always
     volumes:
-      - db-data:/var/lib/postgresql/data:rw
-      # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
-      # - ./docker/db/data:/var/lib/postgresql/data:rw
-###< doctrine/doctrine-bundle ###
-
+      - './:/var/www/html'
+    ports:
+      - '8080:80'
+      - '465:465'
+    depends_on:
+      - mysql
+    entrypoint: /usr/bin/init_project
+  mysql:
+    build: docker/mysql/.
+    container_name: mysql.wiredbeauty
+    #    restart: always
+    volumes:
+      - 'data:/var/lib/mysql'
+    environment:
+      - MYSQL_DATABASE=wiredbeauty
+      - MYSQL_ROOT_PASSWORD=root
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin.wiredbeauty
+    #    restart: always
+    links:
+      - mysql:mysql
+    ports:
+      - "8081:80"
+    environment:
+      MYSQL_USERNAME: root
+      MYSQL_ROOT_PASSWORD: root
+      PMA_HOST: mysql
 volumes:
-###> doctrine/doctrine-bundle ###
-  db-data:
-###< doctrine/doctrine-bundle ###
+  data: {}
