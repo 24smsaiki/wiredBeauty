@@ -4,22 +4,28 @@ namespace App\Controller;
 
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\BotManFactory;
+use BotMan\BotMan\Cache\SymfonyCache;
 use BotMan\BotMan\Drivers\DriverManager;
+use BotMan\BotMan\Interfaces\CacheInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ChatbotController extends AbstractController
 {
-    #[Route('/chatbot', name: 'chatbot')]
-    public function index(Request $request) {
-
+    /**
+     * @Route("/message", name="message")
+     */
+    function messageAction(Request $request)
+    {
         DriverManager::loadDriver(\BotMan\Drivers\Web\WebDriver::class);
 
         $config = [];
 
-        $botman = BotManFactory::create($config);
+        $adapter = new FilesystemAdapter();
+        $botman = BotManFactory::create($config, new SymfonyCache($adapter));
 
         $botman->hears('(hello|hi|hey)', function (BotMan $bot) {
             $bot->reply('Hello!');
@@ -32,14 +38,15 @@ class ChatbotController extends AbstractController
         $botman->listen();
 
         return new Response();
-
     }
     
-    #[Route('/chatframe', name: 'chatframe')]
+    
+    /**
+     * @Route("/chatframe", name="chatframe")
+     */
     public function chatframeAction(Request $request)
     {
         return $this->render('chatbot/chat_frame.html.twig');
     }
-
 
 }
