@@ -3,6 +3,8 @@ FROM php:8.1.1-apache
 RUN apt-get update && apt-get install -y libicu-dev libzip-dev zlib1g-dev libpng-dev libjpeg-dev zip
 
 RUN apt update && apt install -y --no-install-recommends \
+        libzip-dev \
+        zip \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libpng-dev \
@@ -40,7 +42,8 @@ RUN npm install --global yarn
 
 
 RUN docker-php-ext-configure gd --with-jpeg && \
-    docker-php-ext-install gd
+    docker-php-ext-install gd \
+    && docker-php-ext-install zip
 
 COPY ./docker/symfony/init_project.sh /usr/bin/init_project
 RUN chmod +x /usr/bin/init_project

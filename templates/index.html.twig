@@ -19,16 +19,16 @@
     {% else %}
         <a href="{{ path('login') }}">Se connecter</a>
     {% endif %}
+    
     <script>
-            var botmanWidget = {
+        var botmanWidget = {
             frameEndpoint: '{{ path("chatframe") }}',
-            chatServer: '{{ path("chatbot") }}',
-            introMessage: 'Hello, I am a Chatbot',
+            chatServer: '{{ path("message") }}',
             title: 'My Chatbot', 
             mainColor: '#456765',
             bubbleBackground: '#ff76f4',
             aboutText: ''
         };
-</script>
-<script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+    </script>
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
 {% endblock %}
