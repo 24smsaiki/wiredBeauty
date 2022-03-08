@@ -13,15 +13,33 @@
             {{ message }}
         </div>
     {% endfor %}
-    <h1>Register</h1>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col col-md-6 mx-auto mt-5">
+                <div class="card text-center mt-5">
+                    <div class="card-body">
+                        <h2>Sign up</h2>
+                        {{ form_start(registrationForm) }}
+                            {{ form_widget(registrationForm.email, {'attr': {'class': 'form-control mt-5', 'placeholder': 'Email'}}) }}
+                            {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control mt-2', 'placeholder': 'Password'}}) }}
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+                        <div class="text-start mt-3">
+                            {{ form_widget(registrationForm.agreeTerms, {'attr': {'class': 'mt-2'}}) }}
+                            <label for="registration_form_agreeTerms">Agree terms</label>
+                        </div>
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+                        <input type="submit" value="Sign up" class="btn btn-primary mt-4">
+
+                        {{ form_end(registrationForm) }}
+                        <div class="text-end mt-4">
+                            <a class="mt-5" href="{{ path('login') }}">Sign in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 {% endblock %}

@@ -67,7 +67,7 @@ class RegistrationController extends AbstractController
                                  Veuillez cliquer ici pour activer votre compte.
                           </a>"
             );
-            $this->addFlash('success', "Compte créé! Veuillez vérifier votre boîte mail pour valider votre compte.");
+            $this->addFlash('success', "Account created ! You need to activate it by clicking the link you received in your mail.");
 
             return $this->redirectToRoute('login');
         }

@@ -55,17 +55,17 @@ class ResetPasswordController extends AbstractController
 
                 $this->mailer->sendMail(
                     $user->getEmail(),
-                    "Wired Beauty : Réinitialisation du mot de passe",
+                    "Wired Beauty : Password reset",
                     "Description",
                     " <a href='" . $path ."'>
                     Veuillez cliquer ici pour continuer.
                      </a>"
                 );
                 
-                $this->addFlash('notice', 'Vous allez recevoir dans quelques secondes un mail avec la procédure pour réinitialiser votre mot de passe.', array('action' => 'index'), 5);
+                $this->addFlash('success', 'If the email exists, you will receive a mail with a validation link.', array('action' => 'index'), 5);
             
             } else {
-                $this->addFlash('notice', 'Cette adresse email est inconnue.', array('action' => 'index'), 5);
+                $this->addFlash('success', 'If the email exists, you will receive a mail with a validation link.', array('action' => 'index'), 5);
             }
         }
         return $this->render('reset_password/index.html.twig');
@@ -82,7 +82,7 @@ class ResetPasswordController extends AbstractController
 
         $now = new \DateTime();
         if ($now > $reset_password->getCreatedAt()->modify('+ 3 hour')) {
-            $this->addFlash('notice', 'Votre demande de mot de passe a expiré. Merci de la renouveller.');
+            $this->addFlash('danger', 'Your password reset request is expired. Please try again.');
             return $this->redirectToRoute('reset_password');
         }
 
@@ -95,7 +95,7 @@ class ResetPasswordController extends AbstractController
             $reset_password->getUser()->setPassword($password);
             $this->entityManager->flush();
 
-            $this->addFlash('notice', 'Votre mot de passe a bien été mis à jour.');
+            $this->addFlash('success', 'Your password has been successfully updated.');
             return $this->redirectToRoute('login');
         }
 

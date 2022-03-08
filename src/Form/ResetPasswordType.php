@@ -20,21 +20,18 @@ class ResetPasswordType extends AbstractType
                 
                 'required' => true,
                 'first_options' => [
-                    'label' => 'Mon nouveau mot de passe',
                     'attr' => [
-                        'placeholder' => 'nouveau mot de passe.'
+                        'placeholder' => 'New password'
                     ]
                 ],
                 'second_options' => [
-                    'label' => 'Confirmer le nouveau mot de passe',
                     'attr' => [
-                        'placeholder' => 'confirmer le nouveau mot de passe.'
+                        'placeholder' => 'Confirm new password'
                     ]
                 ]
             ])
             ->add('submit', SubmitType::class, [
-                'label' => "Mettre à jour mon mot de passe",
-                'attr' => ['class' => 'primary-btn pc-btn btn-block mt-3']
+                'label' => "Update password",
             ])
         ;
     }
