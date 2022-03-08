@@ -13,7 +13,6 @@ use Symfony\Component\Security\Core\User\UserInterface;
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
-#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -39,9 +38,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: ResetPassword::class)]
     private $resetPasswords;
 
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Skinbiosense::class)]
+    private $skinbiosenses;
+
+    #[ORM\Column(type: 'string', nullable: true)]
+    private $user;
+
     public function __construct()
     {
         $this->resetPasswords = new ArrayCollection();
+        $this->skinbiosenses = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -68,7 +74,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function getUserIdentifier(): string
     {
-        return (string) $this->email;
+        return (string)$this->email;
     }
 
     /**
@@ -76,7 +82,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function getUsername(): string
     {
-        return (string) $this->email;
+        return (string)$this->email;
     }
 
     /**
@@ -163,6 +169,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
+     * <<<<<<< HEAD
      * @return Collection<int, ResetPassword>
      */
     public function getResetPasswords(): Collection
@@ -176,6 +183,20 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             $this->resetPasswords[] = $resetPassword;
             $resetPassword->setUser($this);
         }
+        return $this;
+    }
+
+    public function getSkinbiosenses(): Collection
+    {
+        return $this->skinbiosenses;
+    }
+
+    public function addSkinbiosense(Skinbiosense $skinbiosense): self
+    {
+        if (!$this->skinbiosenses->contains($skinbiosense)) {
+            $this->skinbiosenses[] = $skinbiosense;
+            $skinbiosense->setUser($this);
+        }
 
         return $this;
     }
@@ -188,6 +209,28 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $resetPassword->setUser(null);
             }
         }
+    }
+
+    public function removeSkinbiosense(Skinbiosense $skinbiosense): self
+    {
+        if ($this->skinbiosenses->removeElement($skinbiosense)) {
+            // set the owning side to null (unless already changed)
+            if ($skinbiosense->getUser() === $this) {
+                $skinbiosense->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getUser(): ?string
+    {
+        return $this->user;
+    }
+
+    public function setUser(?string $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }
