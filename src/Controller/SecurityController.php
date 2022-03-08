@@ -42,7 +42,7 @@ class SecurityController extends AbstractController
         }
 
         if ($user->getIsVerified()) {
-            $this->addFlash("success", "Votre compte est déjà activé. Vous pouvez vous connecter.");
+            $this->addFlash("success", "Your account is already activated. You can sign in at any time.");
             return $this->redirectToRoute('login');
         }
 
@@ -57,7 +57,7 @@ class SecurityController extends AbstractController
         $user->setIsVerified(true);
         $this->entityManager->flush();
 
-        $this->addFlash('success', 'Votre compte a bien été validé! Vous pouvez désormais vous connecter.');
+        $this->addFlash('success', 'Your account is successfully activated. You can now sign in.');
         return $this->redirectToRoute('app_index');
     }
 

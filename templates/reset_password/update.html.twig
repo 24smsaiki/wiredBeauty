@@ -14,14 +14,14 @@
 
         <div class="row mt-5">
             <div class="col col-md-6 mx-auto mt-5">
-                <div class="card text-center mt-5">
+                <div class="card text-center mt-5 shadow-lg">
                     <div class="card-body">
                         <h2>New password</h2>
                         {{ form_start(form) }}
 
                         {{ form_widget(form.new_password.first, { 'attr': {'class': "form-control mt-5"}}) }}
                         {{ form_widget(form.new_password.second, { 'attr': {'class': "form-control mt-3"}}) }}
-                        {{ form_widget(form.submit, {'attr': {'class': 'btn btn-primary mt-5'}}) }}
+                        {{ form_widget(form.submit, {'attr': {'class': 'cta-primary-1 shadow mt-5'}}) }}
 
                         {{ form_end(form) }}
                     </div>

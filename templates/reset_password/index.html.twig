@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row mt-5">
             <div class="col col-md-6 mx-auto mt-5">
-                <div class="card text-center mt-5">
+                <div class="card text-center mt-5 shadow-lg">
                     {% for message in app.flashes('success') %}
                         <div class="alert alert-success">{{ message }}</div>
                     {% endfor %}
@@ -18,7 +18,7 @@
                                 <input type="email" name="email" id="inputEmail" class="form-control mt-5"
                                        placeholder="Enter your email address" required autofocus>
                             </div>
-                            <button class="btn btn-primary mt-4" type="submit">Submit</button>
+                            <button class="cta-primary-1 mt-4 shadow" type="submit">Submit</button>
                             <div class="mt-2">
                                 <a href="{{ path('login') }}">Go back</a>
                             </div>

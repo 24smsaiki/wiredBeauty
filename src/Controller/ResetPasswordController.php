@@ -23,21 +23,21 @@ class ResetPasswordController extends AbstractController
     private $verifyEmailHelper;
 
     public function __construct(
-        EntityManagerInterface $entityManager,
-        MailService $mailer,
+        EntityManagerInterface     $entityManager,
+        MailService                $mailer,
         VerifyEmailHelperInterface $helper
 
     )
     {
-        $this->entityManager = $entityManager;        
+        $this->entityManager = $entityManager;
         $this->mailer = $mailer;
     }
 
     #[Route('/reset/password', name: 'reset_password')]
     public function reset(Request $request)
-    {   
+    {
         if ($this->getUser()) {
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('app_index');
         }
 
         if ($request->get('email')) {
@@ -51,19 +51,17 @@ class ResetPasswordController extends AbstractController
                 $reset_password->setCreatedAt(new \DateTimeImmutable());
                 $this->entityManager->persist($reset_password);
                 $this->entityManager->flush();
-                $path = "http://".$_SERVER['HTTP_HOST']."/update/password/".$reset_password->getToken();
+                $path = "http://" . $_SERVER['HTTP_HOST'] . "/update/password/" . $reset_password->getToken();
 
                 $this->mailer->sendMail(
                     $user->getEmail(),
                     "Wired Beauty : Password reset",
                     "Description",
-                    " <a href='" . $path ."'>
-                    Veuillez cliquer ici pour continuer.
-                     </a>"
+                    "Click on <a href='" . $path . "'>this link</a> to reset your password."
                 );
-                
+
                 $this->addFlash('success', 'If the email exists, you will receive a mail with a validation link.', array('action' => 'index'), 5);
-            
+
             } else {
                 $this->addFlash('success', 'If the email exists, you will receive a mail with a validation link.', array('action' => 'index'), 5);
             }
@@ -72,7 +70,8 @@ class ResetPasswordController extends AbstractController
     }
 
     #[Route('/update/password/{token}', name: 'update_password')]
-    public function update(Request $request, $token, UserPasswordHasherInterface $encoder) {
+    public function update(Request $request, $token, UserPasswordHasherInterface $encoder)
+    {
 
         $reset_password = $this->entityManager->getRepository(ResetPassword::class)->findOneByToken($token);
 
@@ -100,7 +99,7 @@ class ResetPasswordController extends AbstractController
         }
 
         return $this->render('reset_password/update.html.twig', [
-            'form' => $form->createView(), 
+            'form' => $form->createView(),
         ]);
     }
 

@@ -11,6 +11,7 @@
 //
 // // start the Stimulus application
 import './bootstrap';
+import './styles/custom.css';
 import './styles/_homepage.css';
 
 

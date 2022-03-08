@@ -3,21 +3,12 @@
     "app": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors-node_modules_core-js_internals_a-constructor_js-node_modules_core-js_internals_array--f04cab.js",
         "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_symfony_stimulus-bri-823d37.js",
         "/build/app.js"
       ],
       "css": [
         "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_symfony_stimulus-bri-823d37.css",
         "/build/app.css"
-      ]
-    },
-    "homepage": {
-      "js": [
-        "/build/runtime.js",
-        "/build/vendors-node_modules_core-js_internals_a-constructor_js-node_modules_core-js_internals_array--f04cab.js",
-        "/build/vendors-node_modules_core-js_modules_es_array_index-of_js-node_modules_core-js_modules_es_dat-3c0627.js",
-        "/build/homepage.js"
       ]
     }
   }

@@ -61,10 +61,10 @@ class RegistrationController extends AbstractController
 
             $this->mailer->sendMail(
                 $user->getEmail(),
-                "Wired Beauty : dernière étape pour valider votre compte",
+                "Wired Beauty : Last step to activate your account",
                 "Description",
-                " <a href='" . $signatureComponents->getSignedUrl() ."'>
-                                 Veuillez cliquer ici pour activer votre compte.
+                " To activate your account please <a href='" . $signatureComponents->getSignedUrl() ."'>
+                                 click here.
                           </a>"
             );
             $this->addFlash('success', "Account created ! You need to activate it by clicking the link you received in your mail.");
