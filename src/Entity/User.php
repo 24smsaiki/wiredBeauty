@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -33,6 +35,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $resetToken;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Skinbiosense::class)]
+    private $skinbiosenses;
+
+    #[ORM\Column(type: 'string', nullable: true)]
+    private $user;
+
+    public function __construct()
+    {
+        $this->skinbiosenses = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -148,6 +161,48 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setResetToken(?string $resetToken): self
     {
         $this->resetToken = $resetToken;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Skinbiosense>
+     */
+    public function getSkinbiosenses(): Collection
+    {
+        return $this->skinbiosenses;
+    }
+
+    public function addSkinbiosense(Skinbiosense $skinbiosense): self
+    {
+        if (!$this->skinbiosenses->contains($skinbiosense)) {
+            $this->skinbiosenses[] = $skinbiosense;
+            $skinbiosense->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSkinbiosense(Skinbiosense $skinbiosense): self
+    {
+        if ($this->skinbiosenses->removeElement($skinbiosense)) {
+            // set the owning side to null (unless already changed)
+            if ($skinbiosense->getUser() === $this) {
+                $skinbiosense->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getUser(): ?string
+    {
+        return $this->user;
+    }
+
+    public function setUser(?string $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

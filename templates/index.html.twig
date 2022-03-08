@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ parent() }} - Accueil {% endblock %}
+{% block title %}{{ parent() }} - Homepage {% endblock %}
 
 {% block body %}
     {% for message in app.flashes('success') %}
@@ -15,8 +15,16 @@
     {% endfor %}
     <h1>Bonjour</h1>
     {% if app.user %}
-        <a href="{{ path('app_logout') }}">Se déconnecter</a>
+
+        {% if "ROLE_ADMIN" in app.user.roles %}
+            <div>
+                <a class="btn btn-primary" href="{{ path('app_upload') }}">CSV Import</a>
+            </div>
+        {% endif %}
+        <div class="mt-5">
+            <a href="{{ path('app_logout') }}">Sign out</a>
+        </div>
     {% else %}
-        <a href="{{ path('login') }}">Se connecter</a>
+        <a href="{{ path('login') }}">Log in</a>
     {% endif %}
 {% endblock %}
