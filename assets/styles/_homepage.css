@@ -36,3 +36,9 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+#acceptCookies {
+    background-color: #398A98;
+    border: #398A98 solid 2px;
+    color: white;
+}

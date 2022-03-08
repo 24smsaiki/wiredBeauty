@@ -29,24 +29,7 @@
         <a href="{{ path('app_register') }}">Sign up</a>
     {% endif %}
 
-    <div id="cookieNotice" class="modal text-center">
-        <div id="cookieCard" class="modal-content mt-5 w-50">
-            <div>
-                <span id="cross_close_modal" class="close">&times;</span>
-                <h2 class="mt-3">We value your privacy</h2>
-            </div>
-            <span class="mt-2">We and our partners use technologies, such as cookies,and process personal data,
-                such as IP addresses and cookie identifiers, to personalise ads and content based on your interests,
-                measure the performance of ads and content, and derive insight about the audiences who saw ads and content.
-                Click below to consent to the use of this technology and the processing of your personal data for these purposes.
-                You can change your mind and change your consent choices at any time by returning to this site.
-            </span>
-            <div>
-                <button class="btn btn-dark mt-3 px-4" type="button" id="refuseCookies">I DO NOT ACCEPT</button>
-                <button class="btn btn-info mt-3 px-4" type="button" id="acceptCookies">I ACCEPT</button>
-            </div>
-        </div>
-    </div>
+    {% include 'app/cookies_popup.html.twig' %}
 {% endblock %}
 
 {% block javascripts %}

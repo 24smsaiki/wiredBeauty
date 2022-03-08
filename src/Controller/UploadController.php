@@ -47,7 +47,7 @@ class UploadController extends AbstractController
                 ]);
             }
         }
-        return $this->render('app/test-upload.html.twig', [
+        return $this->render('upload_form.html.twig', [
             'form' => $form->createView(),
         ]);
     }
