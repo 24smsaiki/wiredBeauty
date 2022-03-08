@@ -7,6 +7,7 @@ use BotMan\BotMan\BotManFactory;
 use BotMan\BotMan\Cache\SymfonyCache;
 use BotMan\BotMan\Drivers\DriverManager;
 use BotMan\BotMan\Interfaces\CacheInterface;
+use App\Class\Chatbot\OnboardingConversation;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,7 +19,7 @@ class ChatbotController extends AbstractController
     /**
      * @Route("/message", name="message")
      */
-    function messageAction(Request $request)
+    function messageAction()
     {
         DriverManager::loadDriver(\BotMan\Drivers\Web\WebDriver::class);
 
@@ -26,11 +27,14 @@ class ChatbotController extends AbstractController
 
         $adapter = new FilesystemAdapter();
         $botman = BotManFactory::create($config, new SymfonyCache($adapter));
-
-        $botman->hears('(hello|hi|hey)', function (BotMan $bot) {
-            $bot->reply('Hello!');
+        
+        $botman->hears('Hello', function($bot) {
+            $bot->startConversation(new OnboardingConversation);
         });
-
+        // $botman->hears('(hello|hi|hey)', function (BotMan $bot) {
+        //     $bot->reply('Hello!');
+        // });
+        
         $botman->fallback(function (BotMan $bot) {
             $bot->reply('Sorry, I did not understand.');
         });
