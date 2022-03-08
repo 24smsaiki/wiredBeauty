@@ -11,6 +11,8 @@
 //
 // // start the Stimulus application
 import './bootstrap';
+import './styles/_homepage.css';
+
 
 const $ = require('jquery');
 // this "modifies" the jquery module: adding behavior to it
