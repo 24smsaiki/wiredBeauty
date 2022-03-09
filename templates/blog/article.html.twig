@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Article Lorem Ipsum{% endblock %}
+
+{% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('danger') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <div class="container-fluid">
+        <div class="row text-center" id="first_rectangle">
+            <h1 class="m-auto mt-4"><b>Lorem ipsum dolor sit amet.</b></h1>
+            <p>
+                <span class="cta-text-1"><b>Category 1</b></span> - March 9, 2022
+            </p>
+        </div>
+
+        <div class="row">
+            <div class="col mx-auto text-center mt-5">
+                <img src="{{ asset('images/library/big_lab.png') }}" alt="Big lab" class="img-fluid mt-5">
+                <p class="w-50 mx-auto mt-5 text-start">
+                    Wired Beauty as of today is a saas based start-up co-founded by Stanislas and Sophie, two beauty
+                    experts who become friends while working toghether at l’Oréal.
+                    <br><br>
+                    Stanislas initiated the scientific research on electrochemistry and antiox measurement to develop a
+                    skincare prescription tool, and launched a first B2C sun prevention tool (mapo solar).
+                    <br><br>
+                    In 2021, , considering the blue ocean of cosmetic market research and the latest demands of consumer
+                    on efficiency proofs especially in Asia, the two of them decided to pivot to a 100% B2B Saas
+                    company, convinced by the potential of this technology.
+                    <br><br>
+                    As of today, Wired Beauty Technologies has invested 1.3M€ in research on their exclusive IOT, mobile
+                    app, algorithand scientific exposome and suncare knowledge partnering with a top-notch consortium (
+                    APHP et Qima )
+                </p>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col mx-auto text-center">
+                <img src="{{ asset('images/library/big_lab.png') }}" alt="Big lab" class="img-fluid mt-5" width="600">
+                <p class="w-25 mx-auto mt-5 text-start">
+                    As of today, Wired Beauty Technologies has invested 1.3M€ in research on their exclusive IOT, mobile
+                    app, algorithand scientific exposome and suncare knowledge partnering with a top-notch consortium (
+                    APHP et Qima )
+                </p>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col col-md-4 mx-auto text-center">
+                <h5>Comments</h5>
+                <textarea class="form-control" name="new_article_comment" id="new_article_comment" rows="7" placeholder="New comment.."></textarea>
+                <button class="cta-primary-1 mb-5 d-block mx-auto"><a href="#" class="text-decoration-none text-white">Send</a></button>
+            </div>
+        </div>
+
+        <div class="row mt-5 mx-auto">
+            <div class="col" id="hide_col"></div>
+            {% for i in 1..2 %}
+                <div class="col col-md-2 me-5 ms-5">
+                    <div class="card border-0">
+                        <img src="{{ asset('images/library/lab.png') }}" class="card-img-top" alt="Lab">
+                        <div class="card-body">
+                            <h4 class="card-title"><b>Lorem ipsum dolor sit amet.</b></h4>
+                            <p class="card-text">
+                                Ab inventore veritatis et quod nihil aut eligendi nihil ut illum vero ea
+                                galisum distinctio.
+                            </p>
+                            <button class="cta-primary-1"><a href="{{ path('show_specific_blog', {'id': 1 }) }}" class="text-decoration-none text-white">View article</a></button>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="col" id="hide_col"></div>
+        </div>
+    </div>
+{% endblock %}

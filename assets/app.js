@@ -16,6 +16,7 @@ import './styles/custom.css';
 import './styles/_homepage.css';
 import './styles/navbar.css';
 import './styles/studies-services.css';
+import './styles/blog.css';
 
 
 const $ = require('jquery');

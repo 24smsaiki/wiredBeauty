@@ -23,4 +23,22 @@ class IndexController extends AbstractController
     {
         return $this->render('pages/studies_services.html.twig');
     }
+
+    /**
+     * @Route("/blog", name="show_blog")
+     */
+    public function showBlog()
+    {
+        return $this->render('blog/index.html.twig');
+    }
+
+    /**
+     * @Route("/blog/{id}", name="show_specific_blog")
+     */
+    public function showSpecificBlog($id)
+    {
+        return $this->render('blog/article.html.twig', [
+            "id" => $id
+        ]);
+    }
 }

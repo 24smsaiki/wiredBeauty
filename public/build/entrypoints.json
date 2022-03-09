@@ -25,6 +25,15 @@
         "/build/runtime.js",
         "/build/studies.js"
       ]
+    },
+    "blog": {
+      "js": [
+        "/build/runtime.js",
+        "/build/blog.js"
+      ],
+      "css": [
+        "/build/blog.css"
+      ]
     }
   }
 }

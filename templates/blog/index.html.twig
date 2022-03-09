@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Blog {% endblock %}
+
+{% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('danger') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <div class="container-fluid">
+        <div class="row text-center" id="first_rectangle">
+            <h1 class="m-auto"><b>Blog</b></h1>
+        </div>
+
+        <div class="w-50 text-center mx-auto mt-5">
+            <h3><b>Our leatest articles</b></h3>
+        </div>
+        <div class="row mt-5">
+            <div class="col col-sm-2" id="hide_col"></div>
+            {% for i in 1..2 %}
+                <div class="col">
+                    <div class="card border-0">
+                        <img src="{{ asset('images/library/lab.png') }}" class="card-img-top" alt="Lab">
+                        <div class="card-body">
+                            <h4 class="card-title"><b>Lorem ipsum dolor sit amet.</b></h4>
+                            <p class="card-text">
+                                Ab inventore veritatis et quod nihil aut eligendi nihil ut illum vero ea
+                                galisum distinctio.
+                            </p>
+                            <button class="cta-primary-1"><a href="{{ path('show_specific_blog', {'id': 1 }) }}" class="text-decoration-none text-white">View article</a></button>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="col">
+                {% for j in 1..3 %}
+                    <div class="card mb-3 border-0">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="{{ asset('images/library/lab.png') }}" class="img-fluid rounded-start" alt="Lab">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Lorem ipsum dolor sit amet.</b></h5>
+                                    <a href="{{ path('show_specific_blog', {'id': 1 }) }}" class="cta-primay-text">View article</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col col-sm-2" id="hide_col"></div>
+        </div>
+
+        <div class="w-50 text-center mx-auto mt-5 pt-5">
+            <h3><b>All articles</b></h3>
+        </div>
+        {% for u in 1..2 %}
+            <div class="row mt-5 mx-auto">
+                <div class="col col-md-3" id="hide_col"></div>
+                {% for v in 1..3 %}
+                    <div class="col col-sm-2">
+                        <div class="card border-0 ps-2 pe-2">
+                            <img src="{{ asset('images/library/lab.png') }}" class="card-img-top" alt="Lab">
+                            <div class="card-body">
+                                <h4 class="card-title"><b>Lorem ipsum dolor sit amet.</b></h4>
+                                <p class="card-text">
+                                    Ab inventore veritatis et quod nihil aut eligendi nihil ut illum vero ea
+                                    galisum distinctio.
+                                </p>
+                                <button class="cta-primary-1"><a href="{{ path('show_specific_blog', {'id': 1 }) }}" class="text-decoration-none text-white">View article</a></button>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="col col-sm-3" id="hide_col"></div>
+
+            </div>
+        {% endfor %}
+
+        <div class="row mt-5 mb-5">
+            <div class="col text-center mx-auto mt-5">
+                <button class="cta-primary-1"><a href="#" class="text-decoration-none text-white">See more</a></button>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('blog') }}
+{% endblock %}
