@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Homepage {% endblock %}
+
+{% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('danger') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <div class="container-fluid">
+        <div class="row text-center" id="first_rectangle">
+            <h1 class="m-auto"><b>Studies & Services</b></h1>
+        </div>
+
+        <div class="row text-center mt-5">
+            <div class="col" id="hide_col"></div>
+            <div class="col">
+                <h2><b>No more tests only on <span class="cta-text-1">30/40 people</span></b></h2>
+                <p class="mt-3">
+                    Consumer demand transparency on formulae performance. In their eyes, clinical tests done on samples
+                    of 30/40 people are not good enough! This is the reason why peer-to-peer recommendation and
+                    non-scientific influencers info gain share of voice . Brands need to recover credibility.
+                </p>
+                <div class="mt-5">
+                    <img class="img-fluid" src="{{ asset('images/library/bann.png') }}" alt="Banner">
+                </div>
+            </div>
+            <div class="col me-0" id="radio_bar_right">
+                <svg id="traits" xmlns="http://www.w3.org/2000/svg" width="204.5" height="14" viewBox="0 0 204.5 14">
+                    <circle id="Ellipse_1" data-name="Ellipse 1" cx="7" cy="7" r="7" transform="translate(190.5)"
+                            fill="#731459"/>
+                    <line id="Ligne_7" data-name="Ligne 7" x1="195" transform="translate(0 7.5)" fill="none"
+                          stroke="#731459" stroke-width="2"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col">
+                {#                ICI METTRE IMAGE #}
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col" id="radio_bar">
+                <svg id="traits" xmlns="http://www.w3.org/2000/svg" width="204.5" height="14" viewBox="0 0 204.5 14">
+                    <circle id="Ellipse_1" data-name="Ellipse 1" cx="7" cy="7" r="7" transform="translate(190.5)"
+                            fill="#731459"/>
+                    <line id="Ligne_7" data-name="Ligne 7" x1="195" transform="translate(0 7.5)" fill="none"
+                          stroke="#731459" stroke-width="2"/>
+                </svg>
+            </div>
+            <div class="col text-center mx-auto">
+                <h2><b>Save <span class="cta-text-1">time</span></b></h2>
+                <p class="mt-3">
+                    Skin care product testing often resembles the protocols of medicament testing.
+                </p>
+                <div class="mt-4">
+                    <button type="button" class="cta-primary-1"><a class="text-decoration-none text-white" href="#"><b>Without Wired Beauty</b></a></button>
+                    <button type="button" class="cta-primary-disabled"><a class="text-decoration-none text-white" href="#"><b>With Wired Beauty</b></a></button>
+                </div>
+                <div class="mt-5">
+                    <img class="mt-5 img-fluid" src="{{ asset('images/library/steps.png') }}" alt="Banner" width="800">
+                </div>
+
+            </div>
+            <div class="col" id="hide_col"></div>
+        </div>
+
+        <div class="row mt-5 mb-5">
+            <div class="col col-md-4 text-center mx-auto mt-5">
+                <h2><b>A study to be adapted <span class="cta-text-1">to your needs</span></b></h2>
+                <p class="mt-3">
+                    While Wired Beauty always adapts to its clients' specifications and does custom research, the
+                    digitally enabled methodology could in the future allow syndicated studies on very large cohorts.
+                </p>
+
+                <div class="mt-5 mb-5">
+                    <img class="img-fluid" src="{{ asset('images/library/stat.png') }}" alt="Stats" width="600">
+                </div>
+
+                <p class="mt-3">
+                    Nevertheless, using our IOT lab device and app, Wired Beauty easily managed the following :
+                </p>
+                <button type="button" class="cta-primary-1"><a class="text-decoration-none text-white" href="#"><b>Download</b></a></button>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('studies') }}
+{% endblock %}

@@ -1,0 +1,23 @@
+#first_rectangle {
+    height: 150px;
+    background-color: #eaf0f0;
+}
+
+#radio_bar_right {
+    transform: scaleX(-1);
+}
+
+@media screen and (max-width: 1400px)
+{
+    #radio_bar {
+        display: none;
+    }
+
+    #radio_bar_right {
+        display: none;
+    }
+
+    #hide_col {
+        display: none;
+    }
+}

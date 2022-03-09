@@ -1,0 +1,1 @@
+import './styles/studies-services.css';

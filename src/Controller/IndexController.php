@@ -15,4 +15,12 @@ class IndexController extends AbstractController
     {
         return $this->render('index.html.twig');
     }
+
+    /**
+     * @Route("/studies-and-services", name="studies_and_services")
+     */
+    public function studiesAndServices()
+    {
+        return $this->render('pages/studies_services.html.twig');
+    }
 }
