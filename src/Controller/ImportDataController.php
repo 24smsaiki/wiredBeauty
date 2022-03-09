@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Perception;
 use App\Entity\Skinbiosense;
 use App\Entity\User;
 use App\Utils\CsvParser;
@@ -23,21 +24,35 @@ class ImportDataController extends AbstractController
         while ($parser->nextRow()) {
             $userRepo = $this->getDoctrine()->getRepository(User::class);
             $user = $userRepo->findBy(['user' => $parser->get('user_id')]);
+            $table = "";
 
+            if(strpos($file, "skinbiosense") !== false){
+                $table = "Score Skinbiosense";
+            } else{
+                $table = "Score Perception";
+            }
             if (!empty($user)) {
-                $skinBiosense = new Skinbiosense();
-                $skinBiosense->setMesure($parser->get('mesure'));
-                $skinBiosense->setSessionId($parser->get('session_id'));
-                $skinBiosense->setScoreSkinbiosense($parser->get('score_skinbiosense'));
-                $skinBiosense->setZoneCode($parser->get('zone_code'));
-                $skinBiosense->setProductCode($parser->get('product_code'));
-                $skinBiosense->setUser($user[0]);
-                $em->persist($skinBiosense);
+                if ($table == "Score Skinbiosense") {
+                    $skinBiosense = new Skinbiosense();
+                    $skinBiosense->setMesure($parser->get('mesure'));
+                    $skinBiosense->setSessionId($parser->get('session_id'));
+                    $skinBiosense->setScoreSkinbiosense($parser->get('score_skinbiosense'));
+                    $skinBiosense->setZoneCode($parser->get('zone_code'));
+                    $skinBiosense->setProductCode($parser->get('product_code'));
+                    $skinBiosense->setUser($user[0]);
+                    $em->persist($skinBiosense);
+                }
+                elseif ($table == "Score Perception") {
+                    $perception = new Perception();
+                    $perception->setScorePerception($parser->get('score_perception'));
+                    $perception->setUser($user[0]);
+                    $em->persist($perception);
+                }
             }
             $em->flush();
         }
 
-        $this->addFlash('success', "The CSV data was successfully uploaded !");
+        $this->addFlash('success', "The " . $table . " CSV data was successfully uploaded !");
         return $this->redirectToRoute("app_index");
     }
 }

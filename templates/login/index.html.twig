@@ -33,7 +33,7 @@
                                 <input class="form-control mt-4" type="password" id="password" name="_password" placeholder="Password"/>
                             </div>
                             <div class="text-start">
-                                <a href="{{ path('reset_password') }}">Reset password</a>
+                                <a class="cta-text-1" href="{{ path('reset_password') }}">Reset password</a>
                             </div>
 
                             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
@@ -43,7 +43,7 @@
                             </div>
                         </form>
                         <div class="text-end mt-4">
-                            <a class="mt-5" href="{{ path('app_register') }}">Sign up</a>
+                            <a class="mt-5 cta-text-1" href="{{ path('app_register') }}">Sign up</a>
                         </div>
                     </div>
                 </div>

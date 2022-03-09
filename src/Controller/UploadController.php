@@ -26,6 +26,7 @@ class UploadController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $file = $form['upload_file']->getData();
+
             if ($file) {
                 $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
                 // this is needed to safely include the file name as part of the URL
@@ -47,7 +48,7 @@ class UploadController extends AbstractController
                 ]);
             }
         }
-        return $this->render('upload_form.html.twig', [
+        return $this->render('app/upload_form.html.twig', [
             'form' => $form->createView(),
         ]);
     }

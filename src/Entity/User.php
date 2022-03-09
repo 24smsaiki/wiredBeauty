@@ -44,10 +44,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string', nullable: true)]
     private $user;
 
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Perception::class)]
+    private $perceptions;
+
     public function __construct()
     {
         $this->resetPasswords = new ArrayCollection();
         $this->skinbiosenses = new ArrayCollection();
+        $this->perceptions = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -231,6 +235,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setUser(?string $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Perception>
+     */
+    public function getPerceptions(): Collection
+    {
+        return $this->perceptions;
+    }
+
+    public function addPerception(Perception $perception): self
+    {
+        if (!$this->perceptions->contains($perception)) {
+            $this->perceptions[] = $perception;
+            $perception->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removePerception(Perception $perception): self
+    {
+        if ($this->perceptions->removeElement($perception)) {
+            // set the owning side to null (unless already changed)
+            if ($perception->getUser() === $this) {
+                $perception->setUser(null);
+            }
+        }
 
         return $this;
     }
