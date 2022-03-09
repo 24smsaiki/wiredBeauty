@@ -14,6 +14,7 @@ import './bootstrap';
 import './styles/app.css';
 import './styles/custom.css';
 import './styles/_homepage.css';
+import './styles/navbar.css';
 
 
 const $ = require('jquery');

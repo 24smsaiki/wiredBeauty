@@ -66,7 +66,9 @@ class ResetPasswordController extends AbstractController
                 $this->addFlash('success', 'If the email exists, you will receive a mail with a validation link.', array('action' => 'index'), 5);
             }
         }
-        return $this->render('reset_password/index.html.twig');
+        return $this->render('reset_password/index.html.twig', [
+            "hide_navbar" => true
+        ]);
     }
 
     #[Route('/update/password/{token}', name: 'update_password')]
@@ -100,6 +102,7 @@ class ResetPasswordController extends AbstractController
 
         return $this->render('reset_password/update.html.twig', [
             'form' => $form->createView(),
+            "hide_navbar" => true
         ]);
     }
 

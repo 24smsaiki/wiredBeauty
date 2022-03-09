@@ -1,0 +1,14 @@
+#wb_navbar {
+}
+
+#ul_links {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: auto;
+}
+
+#sign_button {
+    text-decoration: none;
+    color: white;
+}

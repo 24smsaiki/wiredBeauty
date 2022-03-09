@@ -42,3 +42,203 @@
     border: #398A98 solid 2px;
     color: white;
 }
+
+#first_title {
+    font-size: 50px;
+}
+
+#first_p {
+    width : 100%;
+    overflow-wrap: break-word;
+}
+
+#about_us_row {
+    width: 100%;
+    background-color: lightblue;
+}
+
+
+
+
+/* ZEPLIN */
+.Hero {
+    width: 1678px;
+    height: 538px;
+    margin: 80px 121px 110px;
+}
+
+.first_title {
+    width: 711px;
+    height: 219px;
+    margin: 100px 168px 14px 0;
+    font-size: 60px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+}
+
+.Groupe-19 {
+    width: 799px;
+    height: 538px;
+    margin: 0 0 0 168px;
+}
+
+.pexels-mikhail-nilov-8851556 {
+    width: 224px;
+    height: 194px;
+    margin: 18px 0 58px;
+    padding: 192px 34.5px 1px 167.5px;
+}
+
+.pexels-chokniti-khongchum-2280571 {
+    width: 420px;
+    height: 363px;
+    margin: 29px 191px 26px 188px;
+    padding: 361px 98.5px 1px 314.5px;
+}
+
+.pexels-pavel-danilyuk-8442105 {
+    width: 224px;
+    height: 194px;
+    margin: 63px 0 10px 13px;
+}
+
+#blue_rectangle {
+    padding-top: 50px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-color: #eaf0f0;
+    min-height: 350px;
+}
+
+.Rectangle-1 {
+    width: 173px;
+    height: 53px;
+    margin: 32px 386px 0 0;
+    padding: 15px 31px 14px 32px;
+    border-radius: 26.5px;
+    background-color: #398a98;
+}
+
+.Wired-Beauty-as-of-today-is-a-saas-based-start-up-co-founded-by-Stanislas-and-Sophie-two-beauty-exp {
+    width: 559px;
+    height: 66px;
+    margin: 7px 0 32px;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.About-us {
+    width: 207px;
+    height: 49px;
+    margin: 0 352px 7px 0;
+    font-size: 40px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+}
+
+.Ligne-7 {
+    width: 195px;
+    height: 2px;
+    /*margin: auto;*/
+    margin: 6.5px 9.5px 5.5px 0;
+    background-color: #398a98;
+}
+
+.Ellipse-1 {
+    width: 14px;
+    height: 14px;
+    margin: 0 0 0 190.5px;
+    border-radius: 50%;
+    background-color: #398a98;
+}
+
+.Ellipse-2 {
+    width: 14px;
+    height: 14px;
+    margin: 0 185px 0 0;
+    border-radius: 50%;
+    background-color: #398a98;
+}
+
+.Studies-Services {
+    width: 1614px;
+    height: 371.7px;
+    margin: 172px 0 123.3px 306px;
+}
+
+.Rectangle-5 {
+    width: 284px;
+    height: 246px;
+    margin: 0 30px 125.7px 0;
+    padding: 23px 17px 17px 32px;
+    border-radius: 10px;
+    background-color: #eaf0f0;
+}
+
+.Bgg {
+    width: 274px;
+    height: 216px;
+    margin: 0 0 35.3px;
+    padding: 18px 43px 91px 26px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px 0 rgba(21, 34, 50, 0.08);
+    background-color: #eaf0f0;
+}
+
+.Groupe-27 {
+    width: 559px;
+    height: 230px;
+    margin: 60px 152px 81.7px 116px;
+}
+
+.Segment {
+    width: 140.6px;
+    height: 144.8px;
+    margin: 11.2px 12.9px 0 0.9px;
+    padding: 32.8px 17.3px 39px 30.3px;
+    background-color: #398a98;
+}
+
+.texte {
+    width: 450px;
+    height: 187px;
+    margin: 0 292px 0 0;
+}
+
+.Press {
+    width: 1607px;
+    height: 187px;
+    margin: 155px 313px 95px 0;
+}
+
+.Ligne-7-right {
+    width: 189.5px;
+    height: 2px;
+    margin: 6.5px 0 5.5px 9.5px;
+    background-color: #398a98;
+}
+
+#radio_bar_right {
+    transform: scaleX(-1);
+}
+
+@media screen and (max-width: 1400px)
+{
+    #radio_bar {
+        display: none;
+    }
+
+    #radio_bar_right {
+        display: none;
+    }
+}
