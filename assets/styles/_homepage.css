@@ -241,4 +241,12 @@
     #radio_bar_right {
         display: none;
     }
+
+    #hide_col {
+        display: none;
+    }
+
+    body {
+        text-align: center;
+    }
 }

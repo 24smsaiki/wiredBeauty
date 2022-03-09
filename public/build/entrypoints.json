@@ -24,9 +24,6 @@
       "js": [
         "/build/runtime.js",
         "/build/studies.js"
-      ],
-      "css": [
-        "/build/studies.css"
       ]
     }
   }

@@ -32,7 +32,7 @@
                     <img class="img-fluid" src="{{ asset('images/library/bann.png') }}" alt="Banner">
                 </div>
             </div>
-            <div class="col me-0" id="radio_bar_right">
+            <div class="col text-start me-0" id="radio_bar_right">
                 <svg id="traits" xmlns="http://www.w3.org/2000/svg" width="204.5" height="14" viewBox="0 0 204.5 14">
                     <circle id="Ellipse_1" data-name="Ellipse 1" cx="7" cy="7" r="7" transform="translate(190.5)"
                             fill="#731459"/>
@@ -63,11 +63,12 @@
                     Skin care product testing often resembles the protocols of medicament testing.
                 </p>
                 <div class="mt-4">
-                    <button type="button" class="cta-primary-1"><a class="text-decoration-none text-white" href="#"><b>Without Wired Beauty</b></a></button>
-                    <button type="button" class="cta-primary-disabled"><a class="text-decoration-none text-white" href="#"><b>With Wired Beauty</b></a></button>
+                    <button id="parentBtnWithoutWB" type="button" class="cta-primary-1"><a id="btnWithoutWB" class="text-decoration-none text-white" href="javascript:;"><b>Without Wired Beauty</b></a></button>
+                    <button id="parentBtnWithWB" type="button" class="cta-primary-disabled"><a id="btnWithWB" class="text-decoration-none text-white" href="javascript:;"><b>With Wired Beauty</b></a></button>
                 </div>
                 <div class="mt-5">
-                    <img class="mt-5 img-fluid" src="{{ asset('images/library/steps.png') }}" alt="Banner" width="800">
+                    <img id="imgSteps1" class="mt-5 img-fluid" src="{{ asset('images/library/steps.png') }}" alt="Banner" width="800">
+                    <img id="imgSteps2" class="mt-5 img-fluid" src="{{ asset('images/library/steps2.png') }}" alt="Banner" width="800">
                 </div>
 
             </div>
