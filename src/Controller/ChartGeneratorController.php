@@ -22,23 +22,39 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ChartGeneratorController extends AbstractController
 {
     
-    private $session;
     private $entityManager;
 
 	
     public function __construct(
         EntityManagerInterface $entityManager,
-        SessionInterface $session,
         ChartBuilderInterface $chartBuilder
 
     )
     {
-        $this->session = $session;
         $this->entityManager = $entityManager; 
         $this->chartBuilder = $chartBuilder;        
     }
 
-    public function search($name)
+    public function search($name,$nameWhere,$value)
+    {
+        $array = [];
+        $result = $this->entityManager->createQueryBuilder('s')
+            ->select('s.'.$name)
+            ->from(Skinbiosense::class, 's')
+            ->where('s.'.$nameWhere.'='.$value)
+            ->getQuery()
+            ->getArrayResult()
+            ;
+            foreach($result as $row) {
+                        
+                array_push($array,$row[$name]); 
+            };
+        
+            return $array;
+        
+    }
+
+    public function average($name)
     {
         $array = [];
         $result = $this->entityManager->createQueryBuilder('s')
@@ -51,9 +67,9 @@ class ChartGeneratorController extends AbstractController
                         
                 array_push($array,$row[$name]); 
             };
-        return  $array;
-           
-           
+        
+            return $array;
+        
     }
 
     public function chart($type,$arrayX,$arrayY){
@@ -73,10 +89,50 @@ class ChartGeneratorController extends AbstractController
                 'scales' => [
                     'y' => [
                         'suggestedMin' => 0,
-                        'suggestedMax' => 1,
+                        'suggestedMax' => 0,2,                          
                     ],
                 ],
             ]);
+        return $chart;
+    }
+
+
+    public function multiAxis($type,$arrayX,$arrayY,$arrayZ,$arrayZa){
+        $chart = $this->chartBuilder->createChart($type);
+            $chart->setData([
+                'labels' => $arrayX,
+                'datasets' => [
+                    [
+                        'label' => '',
+                        'backgroundColor' => 'rgb(255, 99, 132)',
+                        'borderColor' => 'rgb(255, 99, 132)',
+                        'data' => $arrayY,
+                        
+                    ],
+                    [
+                        'label' => '',
+                        'backgroundColor' => 'rgb(255, 227, 53)',
+                        'borderColor' => 'rgb(255, 227, 53)',
+                        'data' => $arrayZ,
+                    ],
+                    [
+                        'label' => '',
+                        'backgroundColor' => 'rgb(53, 199, 255)',
+                        'borderColor' => 'rgb(53, 199, 255)',
+                        'data' => $arrayZa,
+                    ],
+                    
+                ],
+            ]);
+            $chart->setOptions([
+                'scales' => [
+                    'y' => [
+                        'suggestedMin' => 0,
+                        'suggestedMax' => 0,2, 
+                    ],
+                ],
+            ]);
+
         return $chart;
     }
     
@@ -84,15 +140,29 @@ class ChartGeneratorController extends AbstractController
     
     public function generate() {
         
+        $scoreAverageArray = $this->average('scoreSkinbiosense');
+        $average = array_sum($scoreAverageArray) / count($scoreAverageArray);
+       
+        $chart1 = $this->chart(Chart::TYPE_LINE,$this->search('id','scoreSkinbiosense',1),$this->search('mesure','scoreSkinbiosense',1));
+        $chart2 = $this->chart(Chart::TYPE_BAR,$this->search('id','scoreSkinbiosense',1),$this->search('zoneCode','scoreSkinbiosense',1));  
+
+        $chart3 = $this->chart(Chart::TYPE_LINE,$this->search('id','scoreSkinbiosense',2),$this->search('mesure','scoreSkinbiosense',2));
+        $chart4 = $this->chart(Chart::TYPE_BAR,$this->search('id','scoreSkinbiosense',2),$this->search('zoneCode','scoreSkinbiosense',2));
         
-        $chart1 = $this->chart(Chart::TYPE_LINE,$this->search('productCode'),$this->search('id'));
-        $chart2 = $this->chart(Chart::TYPE_BAR,$this->search('productCode'),$this->search('id'));
-        $chart3 = $this->chart(Chart::TYPE_RADAR,$this->search('productCode'),$this->search('id'));
-        
+        $chart5 = $this->chart(Chart::TYPE_LINE,$this->search('id','scoreSkinbiosense',3),$this->search('mesure','scoreSkinbiosense',3));
+        $chart6 = $this->chart(Chart::TYPE_BAR,$this->search('id','scoreSkinbiosense',3),$this->search('zoneCode','scoreSkinbiosense',3));
+
+        $chart7 = $this->multiAxis(Chart::TYPE_LINE,$this->average('id'),$this->search('mesure','scoreSkinbiosense',1),$this->search('mesure','scoreSkinbiosense',2),$this->search('mesure','scoreSkinbiosense',3));
+  
         return $this->render('pdf_generate/print.html.twig', [
             'chart1' => $chart1,
             'chart2' => $chart2,
-            'chart3' => $chart3 
+            'chart3' => $chart3,
+            'chart4' => $chart4,
+            'chart5' => $chart5,
+            'chart6' => $chart6,
+            'chart7' => $chart7,
+            'average' => $average 
         ]);
     }
 

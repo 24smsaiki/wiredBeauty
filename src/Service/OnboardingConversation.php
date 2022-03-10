@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Class\Chatbot;
+namespace App\Service;
+
 use BotMan\BotMan\Messages\Incoming\Answer;
 use BotMan\BotMan\Messages\Conversations\Conversation;
+
 
 class OnboardingConversation extends Conversation
 {
@@ -12,32 +14,33 @@ class OnboardingConversation extends Conversation
 
     public function askFirstname()
     {
-        $this->ask('Hello! What is your firstname?', function(Answer $answer) {
+        $this->ask('Hello! à qui ai-je a faire ?', function(Answer $answer) {
             // Save result
             $this->firstname = $answer->getText();
 
-            $this->say('Nice to meet you '.$this->firstname);
+            $this->say('Salut '.$this->firstname);
             $this->askNextStep();
         });
     }
 
     public function askNextStep()
     {
-        $this->ask('Shall we proceed? Say YES or NO', [
+        $this->ask('Souhaitez-vous en savoir plus sur ce que nous faisons ?', [
             [
-                'pattern' => 'yes|yep',
+                'pattern' => 'oui|Oui',
                 'callback' => function () {
-                    $this->say('Okay - we\'ll keep going');
+                    $this->say('Très bien, voici notre brochure de présentation ');
                 }
             ],
             [
-                'pattern' => 'nah|no|nope',
+                'pattern' => 'no|non|Non',
                 'callback' => function () {
-                    $this->say('PANIC!! Stop the engines NOW!');
+                    $this->say('Je ne vous embête pas plus longtemps');
                 }
             ]
         ]);
     }
+
 
     public function run()
     {
