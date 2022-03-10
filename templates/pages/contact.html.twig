@@ -21,7 +21,7 @@
         </div>
 
         <div class="row text-white">
-            <div class="col col-md-4" style="background-color: #398a98">
+            <div class="col col-md-3 ps-5 pt-5" style="background-color: #398a98">
                 <h2 class="mt-5"><b>Contact information</b></h2>
                 <div class="row mt-5">
                     <div class="col col-sm-2">
@@ -61,8 +61,31 @@
                     </div>
                 </div>
             </div>
-            <div class="col"></div>
+            <div class="col" id="calendar_id" style="height:800px;">
+                <div class="calendly-inline-widget" style="min-width:320px;height:680px;" data-auto-load="false">
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+                    <script>
+                        Calendly.initInlineWidget({
+                            url: 'https://calendly.com/zaid-alaa'
+                        });
+                    </script>
+                </div>
+            </div>
         </div>
     </div>
 
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+
+    <script>
+        Calendly.initInlineWidget({
+            url: 'https://calendly.com/zaid-alaa',
+            parentElement: document.getElementById('calendar_id'),
+            prefill: {},
+            utm: {}
+        });
+    </script>
 {% endblock %}
