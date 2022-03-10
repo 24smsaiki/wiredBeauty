@@ -38,9 +38,10 @@ class ImportDataController extends AbstractController
             }
             $em->flush();
         }
-       
 
         $this->addFlash('success', "The CSV data was successfully uploaded !");
-        return $this->redirectToRoute("app_index");
+        return $this->redirectToRoute("rapport",[
+            'importId' => $importId,
+        ]);
     }
 }
