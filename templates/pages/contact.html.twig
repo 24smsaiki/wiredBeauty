@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Contact {% endblock %}
+
+{% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('danger') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% include 'app/cookies_popup.html.twig' %}
+
+    <div class="container-fluid">
+        <div class="row text-center" id="first_rectangle">
+            <h1 class="mt-5"><b>Contact</b></h1>
+        </div>
+
+        <div class="row text-white">
+            <div class="col col-md-3 ps-5 pt-5" style="background-color: #398a98">
+                <h2 class="mt-5"><b>Contact information</b></h2>
+                <div class="row mt-5">
+                    <div class="col col-sm-2">
+                        <img src="{{ asset('images/library/contact/Picto_press.svg') }}" alt="Press">
+                    </div>
+                    <div class="col">
+                        <h3><b>Contact press</b></h3>
+                        <p>
+                            press@wired-beauty.com
+                            <br>
+                            06.83.72.60.50
+                        </p>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col col-sm-2">
+                        <img src="{{ asset('images/library/contact/icon_sales.svg') }}" alt="Sales">
+                    </div>
+                    <div class="col">
+                        <h3><b>Contact sales</b></h3>
+                        <p>
+                            Stan@WBT.com
+                            <br>
+                            Sophie@WBT.com
+                        </p>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col col-sm-2">
+                        <img src="{{ asset('images/library/contact/icon_investor.svg') }}" alt="Investor">
+                    </div>
+                    <div class="col mb-5">
+                        <h3><b>Contact investor</b></h3>
+                        <p>
+                            Sophie@WBT.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" id="calendar_id" style="height:800px;">
+                <div class="calendly-inline-widget" style="min-width:320px;height:680px;" data-auto-load="false">
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+                    <script>
+                        Calendly.initInlineWidget({
+                            url: 'https://calendly.com/zaid-alaa'
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+
+    <script>
+        Calendly.initInlineWidget({
+            url: 'https://calendly.com/zaid-alaa',
+            parentElement: document.getElementById('calendar_id'),
+            prefill: {},
+            utm: {}
+        });
+    </script>
+{% endblock %}

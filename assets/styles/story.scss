@@ -1,0 +1,173 @@
+#show_paragraph {
+  display: none;
+}
+
+@media screen and (max-width: 1400px)
+{
+  #show_paragraph {
+    display: inline;
+  }
+
+  #hide_div {
+    display: none;
+  }
+}
+
+#parag_0 {
+  display: block;
+}
+#parag_1 {
+  display: none;
+}
+#parag_2 {
+  display: none;
+}
+#parag_3 {
+  display: none;
+}
+#parag_4 {
+  display: none;
+}
+#parag_5 {
+  display: none;
+}
+
+header{
+  position: relative;
+}
+#header::after{
+  position: relative;
+  content: url("../../public/images/library/general/Polygone.svg");
+  top:8px;
+  bottom: 20px;
+}
+
+#header:hover::after{
+  opacity: 0.2;
+}
+#header::before{
+  position: absolute;
+  content: url("../../public/images/library/page_a_propos/bg_client_passion.png");
+  top:8px;
+  bottom: 20px;
+  z-index: -2;
+}
+
+#header2::after{
+  position: relative;
+  content: url("../../public/images/library/general/Polygone.svg");
+  top:8px;
+  bottom: 20px;
+
+}
+
+#header2:hover::after{
+  opacity: 0.2;
+}
+#header2::before{
+  position: absolute;
+  content: url("../../public/images/library/page_a_propos/img_one_team.png");
+  top:8px;
+  bottom: 20px;
+  z-index: -2;
+
+}
+
+#header3::after{
+  position: relative;
+  content: url("../../public/images/library/general/Polygone.svg");
+  top:8px;
+  bottom: 20px;
+
+}
+
+#header3:hover::after{
+  opacity: 0.2;
+}
+#header3::before{
+  position: absolute;
+  content: url("../../public/images/library/page_a_propos/bg_integrity.png");
+  top:8px;
+  bottom: 20px;
+  z-index: -2;
+
+}
+
+#header4::after{
+  position: relative;
+  content: url("../../public/images/library/general/Polygone.svg");
+  top:8px;
+  bottom: 20px;
+
+}
+
+#header4:hover::after{
+  opacity: 0.2;
+}
+#header4::before{
+  position: absolute;
+  content: url("../../public/images/library/page_a_propos/img_tech_and_consumer.png");
+  top:8px;
+  bottom: 20px;
+  z-index: -2;
+
+}
+
+#header5::after{
+  position: relative;
+  content: url("../../public/images/library/general/Polygone.svg");
+  top:8px;
+  bottom: 20px;
+
+}
+
+#header5:hover::after{
+  opacity: 0.2;
+}
+#header5::before{
+  position: absolute;
+  content: url("../../public/images/library/page_a_propos/img_corporate.png");
+  top:8px;
+  bottom: 20px;
+  z-index: -2;
+
+}
+
+#test_img {
+  position: relative;
+}
+
+.caption {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+}
+
+.caption2 {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+}
+
+.caption3 {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+}
+
+.caption4 {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+}
+
+.caption5 {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+}

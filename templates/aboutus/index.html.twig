@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - About us{% endblock %}
+
+{% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('danger') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <div class="container-fluid">
+        <div class="row mt-5 mb-5">
+            <div class="col col-md-4 mx-auto text-center mt-5 text-lg-center mb-5">
+                <h1 class="display-1 mb-5"><b>About <span class="cta-text-1">us</span></b></h1>
+                <h3>
+                    Discover the history of Wired Beauty by clicking on start
+                </h3>
+                <button class="cta-primary-1 mt-5 mb-5"><a href="{{ path('beauty_science_and_proofs') }}" class="text-decoration-none text-white">Start</a></button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        body {
+            background-image: url("../images/library/page_a_propos/background_about_us.png");
+            background-repeat: no-repeat;
+            background-position: center top 100px;
+        }
+    </style>
+{% endblock %}

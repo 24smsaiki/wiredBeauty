@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="56" height="56" viewBox="0 0 56 56">
+  <defs>
+    <clipPath id="clip-path">
+      <circle id="Ellipse_70" data-name="Ellipse 70" cx="28" cy="28" r="28" transform="translate(831 1881)" fill="#7e84a3" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="picto_repea" transform="translate(-831 -1881)" clip-path="url(#clip-path)">
+    <g id="noun-result-2120935" transform="translate(832.343 1879.819)">
+      <path id="Tracé_872" data-name="Tracé 872" d="M40.389,1.181H14.231a2.579,2.579,0,0,0-2.566,2.566V37.934A2.579,2.579,0,0,0,14.231,40.5H40.389a2.579,2.579,0,0,0,2.566-2.566V3.747a2.579,2.579,0,0,0-2.566-2.566Zm.455,36.754a.459.459,0,0,1-.455.455H14.231a.459.459,0,0,1-.455-.455V3.747a.459.459,0,0,1,.455-.455H40.389a.459.459,0,0,1,.455.455Z" transform="translate(-1 8)" fill="#398a98" stroke="#398a98" stroke-width="0.5"/>
+      <path id="Tracé_873" data-name="Tracé 873" d="M36.054,29.28H20.492a1.035,1.035,0,0,0,0,2.069H36.1a1.025,1.025,0,0,0,1.035-1.035,1.06,1.06,0,0,0-1.076-1.035Z" transform="translate(-1.963 4.527)" fill="#398a98" stroke="#398a98" stroke-width="0.5"/>
+      <path id="Tracé_874" data-name="Tracé 874" d="M36.054,36.458H20.492a1.035,1.035,0,0,0,0,2.069H36.1a1.025,1.025,0,0,0,1.035-1.035,1.06,1.06,0,0,0-1.076-1.035Z" transform="translate(-1.963 3.64)" fill="#398a98" stroke="#398a98" stroke-width="0.5"/>
+      <path id="Tracé_875" data-name="Tracé 875" d="M36.054,22.1H20.492a1.035,1.035,0,0,0,0,2.069H36.1a1.025,1.025,0,0,0,1.035-1.035A1.06,1.06,0,0,0,36.054,22.1Z" transform="translate(-1.963 5.415)" fill="#398a98" stroke="#398a98" stroke-width="0.5"/>
+      <path id="Tracé_876" data-name="Tracé 876" d="M22.657,16.978h1.9a.415.415,0,0,0,.414-.414V13.543a.415.415,0,0,0-.414-.414h-1.9a.415.415,0,0,0-.414.414v3.021A.445.445,0,0,0,22.657,16.978Z" transform="translate(-2.307 6.523)" fill="#398a98" stroke="#398a98" stroke-width="0.5"/>
+      <path id="Tracé_877" data-name="Tracé 877" d="M28.041,16.674h1.9a.415.415,0,0,0,.414-.414V11.087a.415.415,0,0,0-.414-.414h-1.9a.415.415,0,0,0-.414.414V16.26a.445.445,0,0,0,.414.414Z" transform="translate(-2.973 6.827)" fill="#398a98" stroke="#398a98" stroke-width="0.5"/>
+      <path id="Tracé_878" data-name="Tracé 878" d="M33.425,16.377h1.9a.415.415,0,0,0,.414-.414V8.678a.415.415,0,0,0-.414-.414h-1.9a.415.415,0,0,0-.414.414v7.284A.446.446,0,0,0,33.425,16.377Z" transform="translate(-3.638 7.125)" fill="#398a98" stroke="#398a98" stroke-width="0.5"/>
+    </g>
+  </g>
+</svg>

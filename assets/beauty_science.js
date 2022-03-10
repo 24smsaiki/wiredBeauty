@@ -1,0 +1,1 @@
+import './styles/beauty_science.scss';

@@ -5,6 +5,9 @@
   "build/studies.js": "/build/studies.js",
   "build/blog.css": "/build/blog.css",
   "build/blog.js": "/build/blog.js",
+  "build/beauty_science.css": "/build/beauty_science.css",
+  "build/beauty_science.js": "/build/beauty_science.js",
+  "build/story.js": "/build/story.js",
   "build/runtime.js": "/build/runtime.js",
   "build/vendors-node_modules_core-js_internals_a-constructor_js-node_modules_core-js_internals_array--f04cab.js": "/build/vendors-node_modules_core-js_internals_a-constructor_js-node_modules_core-js_internals_array--f04cab.js",
   "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_symfony_stimulus-bri-823d37.css": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_symfony_stimulus-bri-823d37.css",
@@ -18,5 +21,11 @@
   "build/fonts/fa-regular-400.woff2": "/build/fonts/fa-regular-400.d79c2ec9.woff2",
   "build/fonts/fa-v4compatibility.ttf": "/build/fonts/fa-v4compatibility.52eba2c5.ttf",
   "build/fonts/fa-v4compatibility.woff2": "/build/fonts/fa-v4compatibility.3d503f89.woff2",
-  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_symfony_ux-chartjs_di-98f406.js": "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_symfony_ux-chartjs_di-98f406.js"
+  "build/images/bg_client_passion.png": "/build/images/bg_client_passion.b072875c.png",
+  "build/images/Polygone.svg": "/build/images/Polygone.3238a86d.svg",
+  "build/images/img_one_team.png": "/build/images/img_one_team.df247676.png",
+  "build/images/bg_integrity.png": "/build/images/bg_integrity.59fe670e.png",
+  "build/images/img_tech_and_consumer.png": "/build/images/img_tech_and_consumer.9531fd86.png",
+  "build/images/img_corporate.png": "/build/images/img_corporate.861adaa3.png",
+  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-7db861.js": "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-7db861.js"
 }

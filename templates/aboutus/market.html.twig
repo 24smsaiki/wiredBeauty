@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Market Insights{% endblock %}
+
+{% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('danger') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <div class="container">
+        <div class="row mt-5 align-items-center mb-5">
+            <div class="col col-sm-1" id="hide_col"></div>
+            <div class="col col-md-3 mt-5 mx-auto" id="div_to_hide">
+                <img class="img-fluid" src="{{ asset('images/library/page_a_propos/img_market_insights.png') }}" alt="Beauty Science & proofs" width="300">
+                <h5 class="mt-3"><b>Hover over the text block to change the opacity</b></h5>
+            </div>
+            <div class="col col-md-4 mx-auto mt-5">
+                <img class="img-fluid" src="{{ asset('images/library/page_a_propos/img_market_insights.png') }}" alt="Beauty Science & proofs" width="300" id="img_to_hide">
+                <h1 class="display-4 mt-5">MARKET INSIGHTS</h1>
+                <p id="pg_1">
+                    Consumer and brands demand seek for personalized solutions that only big data can understand.
+                </p>
+                <p id="pg_2">
+                    Data helps discover of new frontiers and claims, especially in the exposome field where human skin
+                    self-defends against aggressions and naturally produces NMF or antioxidants. Can cosmetic beat
+                    natural skin self-defense ? Yes! but how much ?
+                </p>
+                <p id="pg_3">
+                    Trends like clean beauty or legislation (Reach especially) impose frequent and costly ingredient
+                    changes. Can we know up-front which will perform best ? At what dosage ?
+                </p>
+                <div class="mt-5 float-end">
+                    <button class="cta-primary-1"><a href="{{ path('our_beliefs') }}" class="text-decoration-none text-white">Next</a></button>
+                </div>
+            </div>
+            <div class="col col-sm-1" id="hide_col"></div>
+        </div>
+    </div>
+
+    <style>
+        body {
+            background-image: url("../images/library/page_a_propos/background_about_us.png");
+            background-repeat: no-repeat;
+            background-position: center top 100px;
+        }
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('beauty_science') }}
+{% endblock %}

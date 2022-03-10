@@ -35,6 +35,21 @@
       "css": [
         "/build/blog.css"
       ]
+    },
+    "beauty_science": {
+      "js": [
+        "/build/runtime.js",
+        "/build/beauty_science.js"
+      ],
+      "css": [
+        "/build/beauty_science.css"
+      ]
+    },
+    "story": {
+      "js": [
+        "/build/runtime.js",
+        "/build/story.js"
+      ]
     }
   }
 }
