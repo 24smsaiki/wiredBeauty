@@ -63,9 +63,9 @@
         </div>
 
         <div class="row mt-5 mx-auto">
-            <div class="col" id="hide_col"></div>
+            <div class="col col-md-2" id="hide_col"></div>
             {% for i in 1..2 %}
-                <div class="col col-md-2 me-5 ms-5">
+                <div class="col col-md-2 mx-auto">
                     <div class="card border-0">
                         <img src="{{ asset('images/library/lab.png') }}" class="card-img-top" alt="Lab">
                         <div class="card-body">
@@ -79,7 +79,7 @@
                     </div>
                 </div>
             {% endfor %}
-            <div class="col" id="hide_col"></div>
+            <div class="col col-md-2" id="hide_col"></div>
         </div>
     </div>
 {% endblock %}

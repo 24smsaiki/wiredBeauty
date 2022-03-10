@@ -64,9 +64,9 @@
         </div>
         {% for u in 1..2 %}
             <div class="row mt-5 mx-auto">
-                <div class="col col-md-3" id="hide_col"></div>
+                <div class="col-md-1 ms-5" id="hide_col"></div>
                 {% for v in 1..3 %}
-                    <div class="col col-sm-2">
+                    <div class="col col-sm-2 mx-auto">
                         <div class="card border-0 ps-2 pe-2">
                             <img src="{{ asset('images/library/lab.png') }}" class="card-img-top" alt="Lab">
                             <div class="card-body">
@@ -80,7 +80,7 @@
                         </div>
                     </div>
                 {% endfor %}
-                <div class="col col-sm-3" id="hide_col"></div>
+                <div class="col-md-1 me-5" id="hide_col"></div>
 
             </div>
         {% endfor %}
