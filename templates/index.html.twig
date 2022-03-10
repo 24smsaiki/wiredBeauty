@@ -21,14 +21,13 @@
             <div class="col col-sm-1" id="hide_col"></div>
             <div class="col mt-5">
                 <span class="first_title">Objectively measure the vitality criteria of the skin</span>
-                <p>
-                    Avec le générateur de texte online vous pouvez composer votre Lorem Ipsum personnel,
-                    en l’enrichissant avec des éléments html qui en définissent la structure, avec la possibilité
-                    d’insérer des links externes, mais pas seulement.
-                </p>
+                <div class="mt-5">
+                    <button class="cta-primary-1"><a class="text-decoration-none text-white" href="#">Discover</a></button>
+                </div>
+
             </div>
             <div class="col col-sm-1" id="hide_col"></div>
-            <div class="col me-5">
+            <div class="col me-5 mt-5">
                 <img src="{{ asset('images/library/img_hero.png') }}" alt="Img Hero" width="450">
             </div>
             <div class="col col-sm-1" id="hide_col"></div>
@@ -44,7 +43,7 @@
             </div>
             <div class="col">
                 <div class="texte">
-                    <h3 class="About-us">About us</h3>
+                    <h3 class="About-us">About <span class="cta-text-1">us</span></h3>
                     <p>
                         <b>Wired Beauty</b>
                         as of today is a saas based start-up co-founded by Stanislas and Sophie, two beauty experts who
@@ -52,7 +51,7 @@
                         <b>l’Oréal</b>.
                     </p>
                     <br>
-                    <input type="button" class="cta-primary-1" value="Learn more">
+                    <button class="cta-primary-1"><a class="text-decoration-none text-white" href="{{ path('index_about_us') }}">Learn more</a></button>
                 </div>
             </div>
             <div class="col d-inline-flex mt-4 text-center mt-5">
@@ -62,9 +61,9 @@
                     <p>CEO</p>
                 </div>
                 <div class="ms-5">
-                    <img src="{{ asset('images/library/sophie.png') }}" class="img-fluid" alt="Sophie">
-                    <h5 class="pt-3"><b>Sophie le Tanneur</b></h5>
-                    <p>CEO</p>
+                    <img src="{{ asset('images/library/page_accueil/Stanislas.png') }}" class="img-fluid" alt="Sophie">
+                    <h5 class="pt-3"><b>Stanislas Vandier</b></h5>
+                    <p>Président</p>
                 </div>
             </div>
             <div class="col col-sm-2" id="hide_col"></div>
@@ -80,12 +79,12 @@
                 <img src="{{ asset('images/library/Score_Skin-Biosence.png') }}" alt="">
             </div>
             <div class="col col-md-3 mt-5">
-                <h3><b>Studies & Services</b></h3>
+                <h3><b>Studies & <span class="cta-text-1">Services</span></b></h3>
                 <p>
                     While Wired Beauty always adapts to its clients' specifications and does custom research, the
                     digitally enabled methodology could in the future allow syndicated studies on very large cohorts.
                 </p>
-                <button class="cta-primary-1"><a class="text-decoration-none text-white" href="{{ path('studies_and_services') }}">Learn more</a></button>
+                <button class="cta-primary-1"><a class="text-decoration-none text-white" href="{{ path('studies_and_services') }}">Read more</a></button>
             </div>
             <div id="radio_bar_right" class="col">
                 <svg id="traits" xmlns="http://www.w3.org/2000/svg" width="204.5" height="14" viewBox="0 0 204.5 14">
@@ -102,17 +101,17 @@
                     <line id="Ligne_7" data-name="Ligne 7" x1="195" transform="translate(0 7.5)" fill="none" stroke="#731459" stroke-width="2"/>
                 </svg>
             </div>
-            <div class="col mt-5">
-                <h3><b>Our solution</b></h3>
+            <div class="col col-md-4 mt-5">
+                <h3><b>Our <span class="cta-text-1">solution</span></b></h3>
                 <p>
                     WIRED BEAUTY is a French beauty-tech market research company which invested 1,3M€ to develop a non
                     invasive, portable lab connected device to deliver labgrade and real time measurements of skin
                     markers
                     to dermocosmetic lab as well as a smart app in order to also harvest consumer perception.
                 </p>
-
-                <input type="button" class="cta-primary-1" value="Learn more">
+                <button class="cta-primary-1"><a href="{{ path('our_solution') }}" class="text-decoration-none text-white">Learn more</a></button>
             </div>
+            <div class="col col-md-1" id="hide_col"></div>
             <div class="col mt-5">
                 <img src="{{ asset('images/library/img_solution.png') }}" alt="Img Solution"
                      width="350">
@@ -124,23 +123,21 @@
             <div class="col">
                 <div class="col d-flex text-center">
                     <div>
-                        <img src="{{ asset('images/library/sophie.png') }}" class="img-fluid" alt="Sophie">
-                        <h5 class="pt-3"><b>Sophie le Tanneur</b></h5>
-                        <p>CEO</p>
+                        <img src="{{ asset('images/library/page_accueil/synelvia.png') }}" class="img-fluid" alt="Synelvia" width="250">
+                        <h5 class="pt-3">Synelvia</h5>
                     </div>
                     <div class="ms-5">
-                        <img src="{{ asset('images/library/sophie.png') }}" class="img-fluid" alt="Sophie">
-                        <h5 class="pt-3"><b>Sophie le Tanneur</b></h5>
-                        <p>CEO</p>
+                        <img src="{{ asset('images/library/page_accueil/Assistance_publique_Hôpitaux_de_Paris.png') }}" class="img-fluid" alt="Assist">
+                        <h5 class="pt-3">Assistance publique  Hôpitaux de Paris</h5>
                     </div>
                 </div>
             </div>
             <div class="col col-sm-1" id="hide_col"></div>
             <div class="col">
-                <h3><b>Custom partner</b></h3>
+                <h3><b>Our <span class="cta-text-1">partner</span></b></h3>
                 <p>
-                    <b>Wired Beauty</b> as of today is a saas based start-up co-founded by Stanislas and Sophie, two
-                    beauty experts who become
+                    The singularity  of competences and contagious energy, they help our clients improve and simplify
+                    skincare research data.
                 </p>
             </div>
             <div id="radio_bar_right" class="col mt-3">
@@ -151,7 +148,7 @@
             </div>
         </div>
 
-        <div class="row" id="Press">
+        <div class="row mb-5" id="Press">
             <div id="radio_bar" class="col col-md-2">
                 <svg id="traits" xmlns="http://www.w3.org/2000/svg" width="204.5" height="14" viewBox="0 0 204.5 14">
                     <circle id="Ellipse_1" data-name="Ellipse 1" cx="7" cy="7" r="7" transform="translate(190.5)" fill="#731459"/>
@@ -166,16 +163,12 @@
                     beauty experts who become
                 </p>
             </div>
-            <div class="col d-flex text-center ms-5">
+            <div class="col d-flex text-center ms-5 mb-5">
                 <div>
-                    <img src="{{ asset('images/library/sophie.png') }}" class="img-fluid" alt="Sophie">
-                    <h5 class="pt-3"><b>Sophie le Tanneur</b></h5>
-                    <p>CEO</p>
+                    <img src="{{ asset('images/library/page_accueil/fashion-network-logo.png') }}" class="img-fluid" alt="Fashion">
                 </div>
-                <div class="ms-5">
-                    <img src="{{ asset('images/library/sophie.png') }}" class="img-fluid" alt="Sophie">
-                    <h5 class="pt-3"><b>Sophie le Tanneur</b></h5>
-                    <p>CEO</p>
+                <div class="ms-5 mt-3">
+                    <img src="{{ asset('images/library/page_accueil/les_echos.png') }}" class="img-fluid" alt="Echos">
                 </div>
             </div>
         </div>
