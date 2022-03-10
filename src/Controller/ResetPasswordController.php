@@ -20,12 +20,10 @@ class ResetPasswordController extends AbstractController
 {
     private $entityManager;
     private $mailer;
-    private $verifyEmailHelper;
 
     public function __construct(
         EntityManagerInterface $entityManager,
         MailService $mailer,
-        VerifyEmailHelperInterface $helper
 
     )
     {

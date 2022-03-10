@@ -134,6 +134,12 @@
     "phar-io/version": {
         "version": "3.2.1"
     },
+    "phenx/php-font-lib": {
+        "version": "0.5.4"
+    },
+    "phenx/php-svg-lib": {
+        "version": "0.4.1"
+    },
     "phpdocumentor/reflection-common": {
         "version": "2.2.0"
     },
@@ -225,6 +231,9 @@
     },
     "react/stream": {
         "version": "v1.2.0"
+    },
+    "sabberworm/php-css-parser": {
+        "version": "8.4.0"
     },
     "sebastian/cli-parser": {
         "version": "1.0.1"
@@ -604,6 +613,9 @@
             "config/packages/twig.yaml",
             "templates/base.html.twig"
         ]
+    },
+    "symfony/ux-chartjs": {
+        "version": "v2.0.1"
     },
     "symfony/validator": {
         "version": "5.4",
