@@ -1,0 +1,131 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.debug.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+<br/><br/>
+<div id="reportPage">
+    <div class="container">
+    
+<a class="btn btn-primary" href="#" id="downloadPdf">Generer le pdf</a>
+        <h3>Moyenne de score : {{average}}</h3>
+        
+        <div>
+            <h4> Score 1 Hydratant </h4>
+            <div style="width: 25%; display:inline-block">
+                {{render_chart(chart1, {'id': 'my-chart1'}) }}
+            </div>
+            <div style="width: 25%; float: left;">
+                {{render_chart(chart2, {'id': 'my-chart2'}) }}
+            </div>
+        </div>
+        <br>
+
+        <div>
+            <h4>Score 2 Antioxydant </h4>
+            <div style="width: 25%; display:inline-block">
+                {{render_chart(chart3, {'id': 'my-chart3'}) }}
+            </div>
+            <div style="width: 25%; display:inline-block">
+                {{render_chart(chart4, {'id': 'my-chart4'}) }}
+            </div>
+
+            <div class="form-group">
+                <label for="commentaire">commentaire :</label>
+                <textarea class="form-control" aria-label="With textarea"></textarea>
+            </div>
+
+        </div>
+
+        <div>
+            <h4>Score 3 Barrière</h4>
+            <div style="width: 25%; display:inline-block">
+                {{render_chart(chart5, {'id': 'my-chart5'}) }}
+            </div>
+            <div style="width: 25%; display:inline-block">
+                {{render_chart(chart6, {'id': 'my-chart6'}) }}
+            </div>
+
+            <div class="form-group">
+                <label for="commentaire">commentaire :</label>
+                <textarea class="form-control" aria-label="With textarea"></textarea>
+            </div>
+        </div>
+
+        <div>
+            <h4>Peau non traité</h4>
+            <div style="width: 25%; display:inline-block">
+                {{render_chart(chart7, {'id': 'my-chart7'}) }}
+            </div>
+             <div class="form-group">
+                <label for="commentaire">commentaire :</label>
+                <textarea class="form-control" aria-label="With textarea"></textarea>
+            </div>
+
+           
+        </div>
+
+       
+
+        <h4>Avis global</h4>
+        <h4>Efficacité</h4>
+        <h4>Usage</h4>
+        <h4>DEVICE IOT</h4>
+    
+    </div>
+  <br/><br/><br/>
+</div>
+
+
+<script>
+
+
+var randomScalingFactor = function() {
+  return (Math.random() > 0.5 ? 1.0 : 1.0) * Math.round(Math.random() * 100);
+};
+
+
+
+
+$('#downloadPdf').click(function(event) {
+  var reportPageHeight = 2000;
+  var reportPageWidth = 2000;
+  
+  var pdfCanvas = $('<canvas />').attr({
+    id: "canvaspdf",
+    width: reportPageWidth,
+    height: reportPageHeight
+  });
+  
+  var pdfctx = $(pdfCanvas)[0].getContext('2d');
+  var pdfctxX = 0;
+  var pdfctxY = 0;
+  var buffer = 100;
+  
+  $("canvas").each(function(index) {
+    var canvasHeight = $(this).innerHeight();
+    var canvasWidth = $(this).innerWidth();
+    
+    pdfctx.drawImage($(this)[0], pdfctxX, pdfctxY, canvasWidth, canvasHeight);
+    pdfctxX += canvasWidth + buffer;
+    
+    if (index % 2 === 1) {
+      pdfctxX = 0;
+      pdfctxY += canvasHeight + buffer;
+    }
+  });
+  
+  var pdf = new jsPDF('landscape');
+  pdf.addImage($(pdfCanvas)[0], 'PNG', 0, 0);
+  
+  pdf.save('rapport.pdf');
+});
+</script>
+
+
+
+
+{% endblock %}

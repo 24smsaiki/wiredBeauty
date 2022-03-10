@@ -31,6 +31,9 @@ class Skinbiosense
     #[ORM\Column(type: 'float', nullable: true)]
     private $mesure;
 
+    #[ORM\Column(type: 'string', nullable: true)]
+    private $importId;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -104,6 +107,18 @@ class Skinbiosense
     public function setMesure(?float $mesure): self
     {
         $this->mesure = $mesure;
+
+        return $this;
+    }
+
+    public function getImportId(): ?string
+    {
+        return $this->importId;
+    }
+
+    public function setImportId(?string $importId): self
+    {
+        $this->importId = $importId;
 
         return $this;
     }
