@@ -17,14 +17,17 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 class UploadController extends AbstractController
 {
     // ...
+
     /**
      * @Route("/upload", name="app_upload")
      */
-    public function excelCommunesAction(Request $request, EntityManagerInterface $em, SluggerInterface $slugger)
+    public function excelCommunesAction(Request $request, SluggerInterface $slugger)
     {
         $form = $this->createForm(FileUploadType::class);
         $form->handleRequest($request);
+        
         if ($form->isSubmitted() && $form->isValid()) {
+            
             $file = $form['upload_file']->getData();
             if ($file) {
                 $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
@@ -43,7 +46,8 @@ class UploadController extends AbstractController
                 }
 
                 return $this->redirectToRoute("import_data_csv", [
-                    'file' => $newFilename
+                    'file' => $newFilename,
+                    'importId' => uniqid()
                 ]);
             }
         }

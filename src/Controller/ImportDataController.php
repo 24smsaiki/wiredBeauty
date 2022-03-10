@@ -14,12 +14,12 @@ class ImportDataController extends AbstractController
 {
 
     /**
-     * @Route("/import-data-csv/{file}", name="import_data_csv")
+     * @Route("/import-data-csv/{file}/{importId}", name="import_data_csv")
      */
-    public function importDataCSV(EntityManagerInterface $em, $file)
+    public function importDataCSV(EntityManagerInterface $em, $file,$importId)
     {
         $parser = new CsvParser($this->getParameter('csv_directory') . '/' . $file, ',');
-
+        
         while ($parser->nextRow()) {
             $userRepo = $this->getDoctrine()->getRepository(User::class);
             $user = $userRepo->findBy(['user' => $parser->get('user_id')]);
@@ -32,10 +32,13 @@ class ImportDataController extends AbstractController
                 $skinBiosense->setZoneCode($parser->get('zone_code'));
                 $skinBiosense->setProductCode($parser->get('product_code'));
                 $skinBiosense->setUser($user[0]);
+                $skinBiosense->setImportId($importId);
+                
                 $em->persist($skinBiosense);
             }
             $em->flush();
         }
+       
 
         $this->addFlash('success', "The CSV data was successfully uploaded !");
         return $this->redirectToRoute("app_index");
