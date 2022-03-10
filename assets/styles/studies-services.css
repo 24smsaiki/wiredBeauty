@@ -1,5 +1,5 @@
 #first_rectangle {
-    height: 150px;
+    min-height: 150px;
     background-color: #eaf0f0;
 }
 

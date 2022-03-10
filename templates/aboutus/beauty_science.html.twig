@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Beauty Science & Proofs{% endblock %}
+
+{% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('danger') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <div class="container">
+        <div class="row mt-5 align-items-center">
+            <div class="col col-sm-1" id="hide_col"></div>
+            <div class="col col-md-3 mt-5 mx-auto" id="div_to_hide">
+                <img class="img-fluid" src="{{ asset('images/library/page_a_propos/img_beauty_science.png') }}" alt="Beauty Science & proofs" width="300">
+                <h5 class="mt-3"><b>Hover over the text block to change the opacity</b></h5>
+            </div>
+            <div class="col col-md-5 mx-auto mt-5">
+                <img class="img-fluid" src="{{ asset('images/library/page_a_propos/img_beauty_science.png') }}" alt="Beauty Science & proofs" width="300" id="img_to_hide">
+                <h1 class="display-4 mt-5">BEAUTY SCIENCE & PROOFS</h1>
+                <p id="pg_1">
+                    Wired Beauty as of today is a saas based start-up co-founded by Stanislas and Sophie, two beauty
+                    experts who become friends while working toghether at l’Oréal.
+                </p>
+                <p id="pg_2">
+                    Stanislas initiated the scientific research on electrochemistry and antiox measurement to develop a
+                    skincare prescription tool, and launched a first B2C sun prevention tool (mapo solar).
+                </p>
+                <p id="pg_3">
+                    Stanislas initiated the scientific research on electrochemistry and antiox measurement to develop a
+                    skincare prescription tool, and launched a first B2C sun prevention tool (mapo solar).
+                </p>
+                <p id="pg_4">
+                    Stanislas initiated the scientific research on electrochemistry and antiox measurement to develop a
+                    skincare prescription tool, and launched a first B2C sun prevention tool (mapo solar).
+                </p>
+                <div class="mt-5 float-end">
+                    <button class="cta-primary-1"><a href="{{ path('market_insights') }}" class="text-decoration-none text-white">Next</a></button>
+                </div>
+            </div>
+            <div class="col col-sm-1" id="hide_col"></div>
+        </div>
+    </div>
+
+    <style>
+        body {
+            background-image: url("../images/library/page_a_propos/background_about_us.png");
+            background-repeat: no-repeat;
+            background-position: center top 100px;
+        }
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('beauty_science') }}
+{% endblock %}

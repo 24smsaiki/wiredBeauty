@@ -1,0 +1,604 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Our Team and Scientific Consortium{% endblock %}
+
+{% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('danger') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <div class="container">
+        <div class="row mx-auto text-center mt-5">
+            <div class="col col-md-7 mx-auto mt-5">
+                <h1 class="display-3 mt-5"><b>The story continues to be <span class="cta-text-1">written</span>...</b>
+                </h1>
+                <h3 class="mt-5"><b>Scroll down to learn more about the characters in this story</b></h3>
+            </div>
+        </div>
+
+        <div class="row mt-5 mx-auto text-center">
+            <div class="col mt-5">
+                <img src="{{ asset('images/library/page_a_propos/icon_scroll_down.png') }}" alt="Scroll icon"
+                     class="img-fluid">
+                <p class="mt-3">Scroll down</p>
+            </div>
+        </div>
+
+        <div class="row mt-5 mx-auto text-center">
+            <div class="col mt-5">
+                <div class="row">
+                    <div class="col col-sm-3" id="hide_col"></div>
+                    <div class="col">
+                        <img src="{{ asset('images/library/page_accueil/sophie.png') }}" alt="Sophie">
+                        <p class="mt-2"><b>Sophie le Tanneur</b><br>CEO</p>
+                    </div>
+                    <div class="col">
+                        <img src="{{ asset('images/library/page_accueil/Stanislas.png') }}" alt="Stanislas">
+                        <p class="mt-2"><b>Stanislas Vandier</b><br>Président</p>
+                    </div>
+                    <div class="col col-sm-3" id="hide_col"></div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <img src="{{ asset('images/library/page_a_propos/img_triangle.png') }}" alt="Triangle"
+                             class="img-fluid">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-sm-1" id="hide_col"></div>
+                    <div class="col">
+                        <img src="{{ asset('images/library/page_a_propos/img_dr_nico.png') }}" alt="Dr Nico"
+                             class="img-fluid">
+                        <img src="{{ asset('images/library/page_a_propos/img_william.png') }}" alt="William"
+                             class="img-fluid">
+                    </div>
+                    <div class="col"></div>
+                    <div class="col">
+                        <img src="{{ asset('images/library/page_a_propos/img_pr.tu.png') }}" alt="PR">
+                        <img src="{{ asset('images/library/page_a_propos/img_melissa.png') }}" alt="Melissa">
+                    </div>
+                    <div class="col col-sm-1" id="hide_col"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col mt-4"></div>
+        </div>
+        <div class="row mt-5 mx-auto">
+            <div class="col-sm-2" id="hide_col"></div>
+            <div class="col col-sm-2 mt-5 mx-auto">
+                <img src="{{ asset('images/library/page_accueil/sophie.png') }}" alt="Sophie" class="img-fluid"
+                     width="800" id="imgSophie">
+                <img src="{{ asset('images/library/page_accueil/Stanislas.png') }}" alt="Stanislas" class="img-fluid"
+                     width="800" id="imgStanislas">
+                <img src="{{ asset('images/library/page_a_propos/img_dr_nico.png') }}" alt="Dr Nico" class="img-fluid"
+                     width="800" id="imgNico">
+                <img src="{{ asset('images/library/page_a_propos/img_pr.tu.png') }}" alt="Tang" class="img-fluid"
+                     width="800" id="imgTang">
+                <img src="{{ asset('images/library/page_a_propos/img_melissa.png') }}" alt="Melissa" class="img-fluid"
+                     width="800" id="imgMelissa">
+                <img src="{{ asset('images/library/page_a_propos/img_william.png') }}" alt="William" class="img-fluid"
+                     width="800" id="imgWilliam">
+            </div>
+
+            {# SOPHIE LE TANNEUR #}
+            <div class="col col-md-6 mt-5 mx-auto" id="div_sophie">
+                <h4>Sophie le Tanneur</h4>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="biography-tab" data-bs-toggle="tab"
+                                data-bs-target="#biography" type="button" role="tab" aria-controls="biography"
+                                aria-selected="true">Biography
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="interview2-tab" data-bs-toggle="tab" data-bs-target="#interview2"
+                                type="button" role="tab" aria-controls="interview2" aria-selected="false">Interview
+                        </button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="biography" role="tabpanel"
+                         aria-labelledby="biography-tab">
+                        <p class="mt-3">
+                            An FMCG corporate life of over 20 years at Colgate-Palmolive & L’Oréal in marketing and
+                            general management positions in Europe.
+                            <br>
+                            An entrepreneurial life with turn-arounds of a luxury brands backed by Private equity funds
+                            for followed by 7 years of consulting @Lucinda which she founded.
+                            <br>
+                            A passion for entrepreneurship as an impact investor and mentor(@ 50 Partners )
+                        </p>
+                    </div>
+                    <div class="tab-pane fade" id="interview2" role="tabpanel" aria-labelledby="interview2-tab">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <p class="mt-3">
+                                        Stanislas and I know each other well as we each spent over 15 years at L’Oréal
+                                        in marketing
+                                        development and general management positions. We are strong because we are
+                                        different !
+                                        <br>
+                                        We definitely share vision and created together this new fact-based hybrid way
+                                        to do
+                                        clinical trials and consumer studies thanks to technology.
+                                        <br>
+                                        In our day-to-day practice, we share the same office and exchange all the time
+                                        our vital decision : client approach, image, scientific studies and
+                                        partnerships.
+                                        <br>
+                                        I, as the CEO, take care of the convenient application and relationships with
+                                        investors.
+                                        <br>
+                                        Stanislas, as the President, is responsible of the scientific approach of the
+                                        lab device.
+                                    </p>
+                                </div>
+                                <div class="carousel-item">
+                                    <p class="mt-3">
+                                        One never knows, one can only work hard and hope to win the trust of new labs
+                                        and and cosmetic brands!
+                                        <br>
+                                        But we are convinced that betting that consumer will NOT carry on believing
+                                        claims based on 40 people.
+                                        <br>
+                                        Plus, as a former NPD developer , working closely with my R&D collegues, I se
+                                        that in this market speed is of the essence: we aim to reduce <b>the R&D cost
+                                            and
+                                            tempo.</b>
+                                    </p>
+                                </div>
+                                <div class="carousel-item">
+                                    <p class="mt-3">
+                                        We want to redefine the standard of skincare tests, helping labs and marketing
+                                        teams reduce the development leadtimes and base their claims on repeatable
+                                        fact-based protocols.
+                                        <br>
+                                        My motivations lie in the impact that this can have for the industry : working
+                                        quicker, stopping at an early stage less efficient formulae, accumulating data
+                                        to better understand how the skin naturally defends itself to aggression,
+                                        combining this intelligence with life style data.
+                                        <br>
+                                        We want to build a smart, enthousiastic, sustainable consulting firm that can
+                                        save money and time to their clients.
+                                        <br>
+                                        We want to be the best partner of skincare firms.
+
+                                    </p>
+                                </div>
+                            </div>
+                            <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="row mx-auto text-center">
+                            <div class="col">
+                                <a class="text-decoration-none" href="javascript:;"
+                                   data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                    <img src="{{ asset('images/library/general/slider/bouton_precedent_active.svg') }}"
+                                         alt="Prev">
+                                </a>
+                                <a href="javascript:;" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                   class="active text-decoration-none" aria-current="true" aria-label="Slide 1">
+                                    <img src="{{ asset('images/library/general/slider/point_active.svg') }}" alt="Pt">
+                                </a>
+                                <a href="javascript:;" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                   class="active text-decoration-none" aria-current="true" aria-label="Slide 2">
+                                    <img src="{{ asset('images/library/general/slider/point_active.svg') }}" alt="Pt">
+                                </a>
+                                <a href="javascript:;" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                   class="active text-decoration-none" aria-current="true" aria-label="Slide 3">
+                                    <img src="{{ asset('images/library/general/slider/point_active.svg') }}" alt="Pt">
+                                </a>
+                                <a class="text-decoration-none" href="javascript:;"
+                                   data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                    <img src="{{ asset('images/library/general/slider/bouton_suivant_active.svg') }}"
+                                         alt="Next">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {# STANISLAS VANDIER #}
+            <div class="col col-md-6 mt-5 mx-auto" id="div_stanislas">
+                <h4>Stanislas Vandier</h4>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="biography-tab" data-bs-toggle="tab"
+                                data-bs-target="#biography" type="button" role="tab" aria-controls="biography"
+                                aria-selected="true">Biography
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="interview-tab" data-bs-toggle="tab" data-bs-target="#interview"
+                                type="button" role="tab" aria-controls="interview" aria-selected="false">Interview
+                        </button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="biography" role="tabpanel"
+                         aria-labelledby="biography-tab">
+                        <p class="mt-3">
+                            10s years at L’Oréal in marketing and general management positions in Europe.
+                            <br>
+                            An entrepreneurial life in Europe and Asia in dermo-cosmetics (product development and
+                            alternative retail models) and data / AI.
+                            <br>
+                            A passion for innovation and team ventures.
+                        </p>
+                    </div>
+                    <div class="tab-pane fade" id="interview" role="tabpanel" aria-labelledby="interview-tab">
+                        <div id="carouselExampleIndicators2" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <p class="mt-3">
+                                        Sophie and I are convinced that a new innovation cycle is going to take place
+                                        combining lab grade data and large scale panels in real life. Our ambition is to
+                                        contribute to this new frontier with our clients and help them discover new,
+                                        more personalized solutions for their clients.
+                                        <br>
+                                        Strategic domains, in order to innovate through a better and renewed skin
+                                        knowledge and understanding, such as oxidative stress, skin barrier, skin
+                                        hydration are our priorities.
+                                        <br>
+                                        All this is where we get our motivation from; this is where we invest and fully
+                                        dedicate ourselves.
+                                    </p>
+                                </div>
+                                <div class="carousel-item">
+                                    <p class="mt-3">
+                                        I have spent over 5 years working with our partners on the reliability of
+                                        electrochemistry measures of skin vitality. I know it works. It would be a shame
+                                        to miss this true innovation. Other than that, as an ex-L’Oréal, I know how to
+                                        work easily on large samples all over the world in order to achieve better and
+                                        more personalized products and solutions. That is our « secret receipe » !
+                                    </p>
+                                </div>
+                                <div class="carousel-item">
+                                    <p class="mt-3">
+                                        In highly competitive business environments, we anticipated a new innovation
+                                        cycle, combining lab grade data and large scale panels in real life. Our
+                                        ambition is to help our clients discover new, more personalized solutions for
+                                        their clients.
+                                        <br>
+                                        Wired Beauty allows a more agile development process, more reliable claims and
+                                        efficacy proofs and more personalized, differentiating launch strategies.
+                                        Strategic domains, in order to innovate through a better and renewed skin
+                                        knowledge and understanding, such as oxidative stress, skin barrier, skin
+                                        hydration are the priorities we have worked on in our consortium together with
+                                        Qima and Henri Mondor Hospital.
+                                        <br>
+                                        All this is where we get our motivation from; this is where we invest and fully
+                                        dedicate ourselves.
+                                    </p>
+                                </div>
+                            </div>
+                            <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="row mx-auto text-center">
+                            <div class="col">
+                                <a class="text-decoration-none" href="javascript:;"
+                                   data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+                                    <img src="{{ asset('images/library/general/slider/bouton_precedent_active.svg') }}"
+                                         alt="Prev">
+                                </a>
+                                <a href="javascript:;" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0"
+                                   class="active text-decoration-none" aria-current="true" aria-label="Slide 1">
+                                    <img src="{{ asset('images/library/general/slider/point_active.svg') }}" alt="Pt">
+                                </a>
+                                <a href="javascript:;" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1"
+                                   class="active text-decoration-none" aria-current="true" aria-label="Slide 2">
+                                    <img src="{{ asset('images/library/general/slider/point_active.svg') }}" alt="Pt">
+                                </a>
+                                <a href="javascript:;" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2"
+                                   class="active text-decoration-none" aria-current="true" aria-label="Slide 3">
+                                    <img src="{{ asset('images/library/general/slider/point_active.svg') }}" alt="Pt">
+                                </a>
+                                <a class="text-decoration-none" href="javascript:;"
+                                   data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+                                    <img src="{{ asset('images/library/general/slider/bouton_suivant_active.svg') }}"
+                                         alt="Next">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {# DR NICOLAS AMALRIC #}
+            <div class="col col-md-6 mt-5 mx-auto" id="div_nicolas">
+                <h4>Dr Nicolas Amalric</h4>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="biography-tab" data-bs-toggle="tab"
+                                data-bs-target="#biography" type="button" role="tab" aria-controls="biography"
+                                aria-selected="true">Biography
+                        </button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="biography" role="tabpanel"
+                         aria-labelledby="biography-tab">
+                        <p class="mt-3">
+                            Scientific Director of QIMA Life Sciences and former CEO of Synelvia
+                            QIMA Life Sciences (formerly Bioalternatives & Synelvia) offre des services d’analyses
+                            adaptés à la biologie cutanée. L’offre de tests s’étend du screening virtuel in silico à la
+                            bioanalyse d’échantillons cliniques non invasifs, en passant par les tests in vitro et ex
+                            vivo.
+                            <br>
+                            La société QIMA Life Sciences aide les départements marketing et recherche et développement
+                            des grands groupes cosmétique et pharmaceutique européens et américains à innover dans la
+                            conceptualisation de leurs projets et à substancier et soutenir leurs allégations produits.
+                            <br>
+                            A passion for innovation in skin science.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {# PRTUAHN TANG #}
+            <div class="col col-md-6 mt-5 mx-auto" id="div_tang">
+                <h4>Pr.Tu-Ahn Tang</h4>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="biography-tab" data-bs-toggle="tab"
+                                data-bs-target="#biography" type="button" role="tab" aria-controls="biography"
+                                aria-selected="true">Biography
+                        </button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="biography" role="tabpanel"
+                         aria-labelledby="biography-tab">
+                        <p class="mt-3">
+                            Dermatologist, APHP, Hôpital Henri Mondor
+                            <br>
+                            TELDERM
+                            <br>
+                            Ecole Centrale Paris , Interne des hopitaux de Paris, PhD
+                            <br>
+                            A passion for trans-disciplinary innovation
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {# MELISSA EVEILLARD #}
+            <div class="col col-md-6 mt-5 mx-auto" id="div_melissa">
+                <h4>Mélissa Éveillard</h4>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="biography-tab" data-bs-toggle="tab"
+                                data-bs-target="#biography" type="button" role="tab" aria-controls="biography"
+                                aria-selected="true">Biography
+                        </button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="biography" role="tabpanel"
+                         aria-labelledby="biography-tab">
+                        <p class="mt-3">
+                            Trainee at APHP (May’ 21) as a data scientist for the Wired beauty project and SKINBIOSENSE
+                            clinical trial and efficiency vs chromatography.
+                            <br>
+                            Master in Engineering, Mathematics, and Biostatistics track @ Paris Universty
+                            <br>
+                            A passion for new technologies, data exploration and communication based on deep analysis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {# WILLIAM RICHARD #}
+            <div class="col col-md-6 mt-5 mx-auto" id="div_william">
+                <h4>William Richard</h4>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="biography-tab" data-bs-toggle="tab"
+                                data-bs-target="#biography" type="button" role="tab" aria-controls="biography"
+                                aria-selected="true">Biography
+                        </button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="biography" role="tabpanel"
+                         aria-labelledby="biography-tab">
+                        <p class="mt-3">
+                            Directeur d'étudesQIMA Life Sciences Toulouse France since 2018 - Développement de capteurs
+                            <br>
+                            Responsable département électrochimie
+                            <br>
+                            Gestion de projets
+                            <br>
+                            Capteurs
+                            <br>
+                            Matériaux
+                            <br>
+                            Chimie analytique
+                            <br>
+                            Qualité
+                            <br>
+                            A passion for biology and tech
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2" id="hide_col"></div>
+            <div class="row mt-5"></div>
+            <div class="row mt-5 mb-5 mx-auto text-center">
+                <div class="col" id="btnSophie">
+                    <a href="javascript:;" class="text-decoration-none text-dark">
+                        <img src="{{ asset('images/library/page_accueil/sophie.png') }}" alt="Sophie">
+                        <p class="mt-2"><b><u>Sophie le Tanneur</u></b><br>CEO</p>
+                    </a>
+                </div>
+                <div class="col" id="btnStanislas">
+                    <a href="javascript:;" class="text-decoration-none text-dark">
+                        <img src="{{ asset('images/library/page_accueil/Stanislas.png') }}" alt="Stanislas">
+                        <p class="mt-2"><b><u>Stanislas Vandier</u></b><br>Président</p>
+                    </a>
+                </div>
+                <div class="col" id="btnNico">
+                    <a href="javascript:;" class="text-decoration-none text-dark">
+                        <img src="{{ asset('images/library/page_a_propos/img_dr_nico.png') }}" alt="Dr Nico">
+                        <p class="mt-2"><b><u>Dr Nicolas Amalric</u></b></p>
+                    </a>
+                </div>
+                <div class="col" id="btnTang">
+                    <a href="javascript:;" class="text-decoration-none text-dark">
+                        <img src="{{ asset('images/library/page_a_propos/img_pr.tu.png') }}" alt="Pr Tu">
+                        <p class="mt-2"><b><u>Pr.Tu-ahn Duong</u></b></p>
+                    </a>
+                </div>
+                <div class="col" id="btnMelissa">
+                    <a href="javascript:;" class="text-decoration-none text-dark">
+                        <img src="{{ asset('images/library/page_a_propos/img_melissa.png') }}" alt="Melissa">
+                        <p class="mt-2"><b><u>Mélissa Éveillard</u></b></p>
+                    </a>
+                </div>
+                <div class="col" id="btnWilliam">
+                    <a href="javascript:;" class="text-decoration-none text-dark">
+                        <img src="{{ asset('images/library/page_a_propos/img_william.png') }}" alt="William">
+                        <p class="mt-2"><b><u>William Richard</u></b></p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5 mx-auto text-center" id="hide_div">
+            <h3 class="mt-5"><b>VALUES AND SPIRIT</b></h3>
+            <div id="test_img" class="col mt-5">
+                <img id="client_p" src="{{ asset('images/library/page_a_propos/bg_client_passion.png') }}"
+                     alt="Client passion">
+                {# <svg id="svg_overlay" xmlns="http://www.w3.org/2000/svg" width="263" height="228" viewBox="0 0 263 228">
+                    <path id="Polygone" d="M197.25,0,263,114,197.25,228H65.75L0,114,65.75,0Z" fill="#398a98"/>
+                </svg> #}
+            </div>
+        </div>
+
+        <div class="row mx-auto mt-5 text-center" id="show_paragraph">
+            <h3 class="mt-5"><b>VALUES AND SPIRIT</b></h3>
+            <div class="col mt-5">
+                <p class="mt-5">
+                    <b>
+                        We focus on results with professionalism and constantly respect ethical codes.
+                        <br>
+                        We listen, we deliver.
+                        <br>
+                        We help our clients succeed.
+                    </b>
+                </p>
+            </div>
+        </div>
+
+        <div class="row mx-auto text-center mt-3" id="hide_div">
+            <div class="col">
+                <img src="{{ asset('images/library/page_a_propos/img_one_team.png') }}" alt="One team">
+            </div>
+            <div class="col mt-5">
+                <p class="mt-5">
+                    <b>
+                        We focus on results with professionalism and constantly respect ethical codes.
+                        <br>
+                        We listen, we deliver.
+                        <br>
+                        We help our clients succeed.
+                    </b>
+                </p>
+            </div>
+            <div class="col">
+                <img src="{{ asset('images/library/page_a_propos/bg_integrity.png') }}" alt="Integrity">
+            </div>
+        </div>
+
+        <div class="row mx-auto text-center mt-5" id="hide_div">
+            <div class="col col-sm-2" id="hide_col"></div>
+            <div class="col mt-5">
+                <img src="{{ asset('images/library/page_a_propos/img_tech_and_consumer.png') }}" alt="Tech">
+            </div>
+            <div class="col mt-5">
+                <img src="{{ asset('images/library/page_a_propos/img_corporate.png') }}" alt="Corporate">
+            </div>
+            <div class="col col-sm-2" id="hide_col"></div>
+        </div>
+
+        <div class="row mt-5" id="hide_div"></div>
+
+        <div class="row mt-5 text-center mx-auto">
+            <div class="col mt-5">
+                <h2><b>INVESTORS AND BOARDS</b></h2>
+                <p class="mt-4">
+                    Wired beauty is privately held and backed by a college of 14 business angels.
+                    <br>
+                    Stanislas, as the founder and President, <b>still own 69,47% of the equity</b>.
+                    <br>
+                    <b>Sophie, as co-founder and CEO owns 18%</b>.
+                </p>
+            </div>
+        </div>
+
+        <div class="row mt-5 text-center mx-auto">
+            <div class="col col-sm-2" id="hide_col"></div>
+            <div class="col mt-5">
+                <h2 class="mb-5"><b>Advisory Board</b></h2>
+                <div class="row mx-auto text-center">
+                    <div class="col">
+                        <img src="{{ asset('images/library/page_a_propos/img_pierre_françois.png') }}" alt="Pierre">
+                        <p class="mt-2">
+                            <b><u>Pierre François Le Louët</u></b>
+                            <br>
+                            <span>NellyRodi President Trends research</span>
+                        </p>
+                    </div>
+                    <div class="col">
+                        <img src="{{ asset('images/library/page_a_propos/img_gilles_genain.png') }}" alt="Gilles">
+                        <p class="mt-2">
+                            <b><u>Gilles GENAIN</u></b>
+                            <br>
+                            <span>Former head of L’Oréal Product Development</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-sm-2" id="hide_col"></div>
+        </div>
+    </div>
+    <div class="container-fluid mt-5">
+        <div class="row text-center mt-5" id="first_rectangle">
+            <h3 class="mt-5"><b>Want to know more about our services?</b></h3>
+            <div class="mt-4 mb-5">
+                <button class="cta-primary-1"><a class="text-decoration-none text-white" href="#">Discover</a></button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        body {
+            background-image: url("../images/library/page_a_propos/background_about_us.png");
+            background-repeat: no-repeat;
+            background-position: center top 100px;
+        }
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('story') }}
+{% endblock %}

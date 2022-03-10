@@ -1,0 +1,14 @@
+#show_paragraph {
+  display: none;
+}
+
+@media screen and (max-width: 1400px)
+{
+  #show_paragraph {
+    display: inline;
+  }
+
+  #hide_div {
+    display: none;
+  }
+}
