@@ -1,0 +1,261 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Scientific validation {% endblock %}
+
+{% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('danger') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% include 'app/cookies_popup.html.twig' %}
+
+    <div class="container-fluid">
+        <div class="row text-center" id="first_rectangle">
+            <h1 class="mt-5"><b>Scientific validation</b></h1>
+        </div>
+
+        <div class="row mt-5 mx-auto text-center">
+            <div class="col col-md-4 mx-auto mt-4">
+                <h2><b>Wired Beauty scientific <span class="cta-text-1">partners</span></b></h2>
+                <p>
+                    The Wired Beauty technology is the fruit of a scientific consortium uniting the founders of Wired
+                    Beauty, the <u>APHP</u> (Assistance Publique – Hôpitaux de Paris and the French Contract Research
+                    Organization (CRO), QIMA.
+                </p>
+            </div>
+        </div>
+
+        <div class="row mt-5 mx-auto mb-5">
+            <div class="col col-sm-2" id="hide_col"></div>
+            <div class="col mb-5" id="hide_col">
+                <img class="img-fluid" src="{{ asset('images/library/page_scientifique_validation/img_partners.png') }}"
+                     alt="Solution">
+            </div>
+            <div class="col col-md-3 mt-5 mb-5">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row mt-5">
+                                <div class="col">
+                                    <h3><b>Electrochemi</b></h3>
+                                </div>
+                            </div>
+                            <p class="mt-4">
+                                Demonstrated the power of electrochemistry to decifer antioxydative performance on the
+                                skin
+                                <br>
+                                <a href="#" class="cta-primay-text">See results</a>
+                            </p>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row mt-5 ">
+                                <div class="col">
+                                    <h3><b>Wired Beauty IOT</b></h3>
+                                </div>
+                            </div>
+                            <p class="mt-4">
+                                Proved that the Wired Beauty IOT nomadic lab can level with traditionnal chromatography
+                                test in less than 1 minute (90% correlation)
+                                <br>
+                                <a href="#" class="cta-primay-text">See results</a>
+                            </p>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row mt-5">
+                                <div class="col">
+                                    <h3><b>Can beat TWELL tests</b></h3>
+                                </div>
+                            </div>
+                            <p class="mt-4">
+                                Found that the Wired Beauty IOT nomadic lab device can beat TWELL tests
+                                <br>
+                                <a href="#" class="cta-primay-text">See results</a>
+                            </p>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row mt-5">
+                                <div class="col">
+                                    <h3><b>Miniaturized</b></h3>
+                                </div>
+                            </div>
+                            <p class="mt-4">
+                                Miniaturized the Wired Beauty IOT nomadic device
+                            </p>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row mt-5">
+                                <div class="col">
+                                    <h3><b>Algorithm</b></h3>
+                                </div>
+                            </div>
+                            <p class="mt-4">
+                                Developped the interpretation of the signal algorithm within minutes
+                            </p>
+                        </div>
+                    </div>
+                    <button class="carousel-control-next" type="button"
+                            data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="row mx-auto text-center">
+                    <div class="col">
+                        <a class="text-decoration-none" href="javascript:;"
+                           data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            <img src="{{ asset('images/library/general/slider/bouton_precedent_active.svg') }}"
+                                 alt="Prev">
+                        </a>
+                        <a href="javascript:;" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                           class="active text-decoration-none" aria-current="true" aria-label="Slide 1">
+                            <img src="{{ asset('images/library/general/slider/point_active.svg') }}" alt="Pt">
+                        </a>
+                        <a href="javascript:;" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                           class="active text-decoration-none" aria-current="true" aria-label="Slide 2">
+                            <img src="{{ asset('images/library/general/slider/point_active.svg') }}" alt="Pt">
+                        </a>
+                        <a href="javascript:;" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                           class="active text-decoration-none" aria-current="true" aria-label="Slide 3">
+                            <img src="{{ asset('images/library/general/slider/point_active.svg') }}" alt="Pt">
+                        </a>
+                        <a href="javascript:;" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                           class="active text-decoration-none" aria-current="true" aria-label="Slide 4">
+                            <img src="{{ asset('images/library/general/slider/point_active.svg') }}" alt="Pt">
+                        </a>
+                        <a href="javascript:;" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                           class="active text-decoration-none" aria-current="true" aria-label="Slide 5">
+                            <img src="{{ asset('images/library/general/slider/point_active.svg') }}" alt="Pt">
+                        </a>
+                        <a class="text-decoration-none" href="javascript:;"
+                           data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <img src="{{ asset('images/library/general/slider/bouton_suivant_active.svg') }}"
+                                 alt="Next">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-sm-3" id="hide_col"></div>
+        </div>
+
+        <div class="row mt-5 mx-auto">
+            <div class="col col-sm-3" id="hide_col"></div>
+            <div class="col mt-5">
+                <h2><b>Some of Wired Beauty <span class="cta-text-1">PAPERS</span></b></h2>
+                <p>
+                    APHP study December 2021 – 60 subjects
+                    <br>
+                    <a href="#" class="cta-primay-text">See results</a>
+                    <br><br>
+                    TWELL vs wired beauty
+                    <br>
+                    <a href="#" class="cta-primay-text">See results</a>
+                    <br><br>
+                    chromatography vs. Wired Beauty
+                    <br>
+                    <a href="#" class="cta-primay-text">See results</a>
+                </p>
+            </div>
+            <div class="col">
+                <img src="{{ asset('images/library/page_scientifique_validation/img_beauty_papers.png') }}" alt="PP">
+            </div>
+            <div class="col col-sm-3" id="hide_col"></div>
+        </div>
+
+        <div class="row mt-5 mx-auto text-center mb-5">
+            <div class="col col-md-3 mx-auto mt-5 mb-5">
+                <h2><b>SKIN CARE INTELLIGENCE: some interesting <span class="cta-text-1">articles</span></b></h2>
+            </div>
+        </div>
+
+        <div class="row mt-5 mx-auto">
+            <div class="col col-sm-3" id="hide_col"></div>
+            <div class="col me-5">
+                <img src="{{ asset('images/library/page_scientifique_validation/img_interesting_articles.png') }}"
+                     alt="Articles">
+            </div>
+            <div class="col ms-5 mt-5 mb-5">
+                <div id="carouselExampleIndicators2" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row mt-5 mx-auto">
+                                <div class="col">
+                                    <h3><b>What is oxidative stress ?</b></h3>
+                                </div>
+                            </div>
+                            <p class="mt-4">
+                                Oxidative stress is a rupture of cellular balance, producing a build-up of free radicals
+                                responsible for skin premature ageing.
+                                <br>
+                                <a href="#" class="cta-primay-text">Learn more</a>
+                            </p>
+                            <div class="row mt-5 mx-auto">
+                                <div class="col">
+                                    <h3><b>What are free radicals?</b></h3>
+                                </div>
+                            </div>
+                            <p>
+                                <a href="#" class="cta-primay-text">Learn more</a>
+                            </p>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row mt-5 mx-auto">
+                                <div class="col">
+                                    <h3><b>How can antioxidants protect the skin?</b></h3>
+                                </div>
+                            </div>
+                            <p class="mt-4">
+                                One can distinguish two types of antioxidants : enzymatic (for instance : superoxide,
+                                catalase, peroxidase, dismutase, peroxidase glutathione) and non enzymatic ones.
+                                <br>
+                                <a href="#" class="cta-primay-text">Learn more</a>
+                            </p>
+                            <div class="row mt-5 mx-auto">
+                                <div class="col">
+                                    <h3><b>What are signs of antioxidative stress on skin?</b></h3>
+                                </div>
+                            </div>
+                            <p>
+                                <a href="#" class="cta-primay-text">Learn more</a>
+                            </p>
+                        </div>
+                    </div>
+                    <button class="carousel-control-next" type="button"
+                            data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="row mx-auto text-center">
+                    <div class="col">
+                        <a class="text-decoration-none" href="javascript:;"
+                           data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+                            <img src="{{ asset('images/library/general/slider/bouton_precedent_active.svg') }}"
+                                 alt="Prev">
+                        </a>
+                        <a href="javascript:;" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0"
+                           class="active text-decoration-none" aria-current="true" aria-label="Slide 1">
+                            <img src="{{ asset('images/library/general/slider/point_active.svg') }}" alt="Pt">
+                        </a>
+                        <a href="javascript:;" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1"
+                           class="active text-decoration-none" aria-current="true" aria-label="Slide 2">
+                            <img src="{{ asset('images/library/general/slider/point_active.svg') }}" alt="Pt">
+                        </a>
+                        <a class="text-decoration-none" href="javascript:;"
+                           data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+                            <img src="{{ asset('images/library/general/slider/bouton_suivant_active.svg') }}"
+                                 alt="Next">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-sm-3" id="hide_col"></div>
+        </div>
+    </div>
+
+{% endblock %}

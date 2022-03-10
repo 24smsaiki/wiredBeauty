@@ -1,0 +1,187 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Our Solution {% endblock %}
+
+{% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('danger') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% include 'app/cookies_popup.html.twig' %}
+
+    <div class="container-fluid">
+        <div class="row text-center" id="first_rectangle">
+            <h1 class="mt-5"><b>Our solution</b></h1>
+        </div>
+
+        <div class="row mt-5 mx-auto text-center mb-5">
+            <div class="col col-md-4 mt-5 mx-auto mb-5">
+                <h3><b>Nomadic labgrade IOT device & <span class="cta-text-1">smart app</span></b></h3>
+                <p>
+                    WIRED BEAUTY is a French beauty-tech market research company which invested 1,3M€ to develop a non
+                    invasive, portable lab connected device to deliver labgrade and real time measurements of skin
+                    markers to dermocosmetic lab as well as a smart app in order to also harvest consumer perception.
+                </p>
+            </div>
+            <div class="row" id="img_to_hide">
+                <div class="col">
+                    <img class="img-fluid" src="{{ asset('images/library/img_solution.png') }}" alt="Solution">
+                </div>
+            </div>
+            <div class="row mt-5 mx-auto text-center">
+                <div class="col col-sm-2" id="hide_col"></div>
+                <div class="col" id="hide_col">
+                    <img class="img-fluid" src="{{ asset('images/library/img_solution.png') }}" alt="Solution">
+                </div>
+                <div class="col col-md-3">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row mt-5 mx-auto text-center">
+                                    <div class="col col-sm-1">
+                                        <img src="{{ asset('images/library/page_a_propos/picto_iot.svg') }}" alt="IOT" class="img-fluid">
+                                    </div>
+                                    <div class="col">
+                                        <h3><b>WB is NEW</b></h3>
+                                    </div>
+                                </div>
+                                <p class="mt-4">
+                                    Hybrid studies combining objective clinical results measurements & consumer
+                                    perception.
+                                </p>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row mt-5 mx-auto text-center">
+                                    <div class="col col-sm-1">
+                                        <img src="{{ asset('images/library/page_solution/picto_wb_is_different.svg') }}"
+                                             alt="WB DIFF" class="img-fluid">
+                                    </div>
+                                    <div class="col">
+                                        <h3><b>WB is DIFFERENT</b></h3>
+                                    </div>
+                                </div>
+                                <p class="mt-4">
+                                    Proprietary IOT and Algorythm allowing decifering within minutes combined with a
+                                    consumer app harvesting consumer opinions.
+                                </p>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row mt-5 mx-auto text-center">
+                                    <div class="col col-sm-1">
+                                        <img src="{{ asset('images/library/page_solution/picto_wb_is_better.svg') }}"
+                                             alt="WB DIFF" class="img-fluid">
+                                    </div>
+                                    <div class="col">
+                                        <h3><b>WB is BETTER</b></h3>
+                                    </div>
+                                </div>
+                                <p class="mt-4">
+                                    Real World Evidence (link with pollution, UV and lifestyle) of skincare efficiency
+                                    on large statistical basis (ex 1000 testers).
+                                </p>
+                            </div>
+                        </div>
+                        <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <div class="row mx-auto text-center">
+                        <div class="col">
+                            <a class="text-decoration-none" href="javascript:;"
+                               data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <img src="{{ asset('images/library/general/slider/bouton_precedent_active.svg') }}"
+                                     alt="Prev">
+                            </a>
+                            <a href="javascript:;" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                               class="active text-decoration-none" aria-current="true" aria-label="Slide 1">
+                                <img src="{{ asset('images/library/general/slider/point_active.svg') }}" alt="Pt">
+                            </a>
+                            <a href="javascript:;" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                               class="active text-decoration-none" aria-current="true" aria-label="Slide 2">
+                                <img src="{{ asset('images/library/general/slider/point_active.svg') }}" alt="Pt">
+                            </a>
+                            <a href="javascript:;" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                               class="active text-decoration-none" aria-current="true" aria-label="Slide 3">
+                                <img src="{{ asset('images/library/general/slider/point_active.svg') }}" alt="Pt">
+                            </a>
+                            <a class="text-decoration-none" href="javascript:;"
+                               data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <img src="{{ asset('images/library/general/slider/bouton_suivant_active.svg') }}"
+                                     alt="Next">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-sm-3" id="hide_col"></div>
+            </div>
+        </div>
+
+        <div class="row mt-5" id="img_to_hide">
+            <div class="col">
+                <img class="img-fluid" src="{{ asset('images/library/page_solution/illustration_data_x_skincare.png') }}" alt="Data">
+            </div>
+        </div>
+
+        <div class="row mt-5 mx-auto">
+            <div class="col col-sm-2" id="hide_div"></div>
+            <div class="col mt-5 col-md-3 me-5">
+                <h2><b>SMART DATA X <span class="cta-text-1">SKINCARE</span></b></h2>
+                <p>
+                    Our measurements range from:
+                    <br><br>
+                    &nbsp;&nbsp;- targeted markers such as Ascorbic acid, Alpha Tocopherol and squalen/sebum to
+                    <br><br>
+                    &nbsp;&nbsp;- non targeted measurements of the barrier function or the antioxydative capacity of the
+                    skin.
+                </p>
+            </div>
+            <div class="col ms-5" id="hide_col">
+                <img src="{{ asset('images/library/page_solution/illustration_data_x_skincare.png') }}" alt="Data" class="img-fluid">
+            </div>
+            <div class="col col-sm-2" id="hide_div"></div>
+        </div>
+
+        <div class="row mt-5 mx-auto text-center">
+            <div class="col col-md-4 mx-auto mt-5">
+                <h2><b>OUR INSANELY FAST <span class="cta-text-1">ALGORITHM!</span></b></h2>
+                <p>
+                    <b>
+                        Thanks to its IOT, its mobile consumer app and its standardized single-use patches, Wired Beauty
+                        can decifer within seconds skin antioxydative and mosterizing reactions. Artificial intelligence
+                        improves repeatability of process.
+                    </b>
+                </p>
+            </div>
+        </div>
+
+        <div class="row mt-5 mx-auto text-center">
+            <div class="col col-sm-2" id="hide_div"></div>
+            <div class="col">
+                <img src="{{ asset('images/library/page_solution/img_portable_lab.png') }}" alt="Portable" class="mb-4">
+            </div>
+            <div class="col">
+                <img src="{{ asset('images/library/page_solution/img_smarphone_app.png') }}" alt="Smartphone" class="mb-4">
+            </div>
+            <div class="col">
+                <img src="{{ asset('images/library/page_solution/img_single_use.png') }}" alt="Single" class="mb-4">
+            </div>
+            <div class="col">
+                <img src="{{ asset('images/library/page_solution/img_data_center.png') }}" alt="Data Center" class="mb-4">
+            </div>
+            <div class="col col-sm-2" id="hide_div"></div>
+
+            <div class="mt-5">
+                <button class="cta-primary-1 mt-5 mb-5"><a href="#" class="text-decoration-none text-white">BOOK A DEMO</a></button>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

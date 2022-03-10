@@ -20,7 +20,9 @@
         {% include 'components/navbar.html.twig' %}
     {% endif %}
 
-    {% block body %}
-        {% endblock %}
+    {% block body %}{% endblock %}
+    {% if hide_navbar is not defined %}
+        {% include 'components/footer.html.twig' %}
+    {% endif %}
     </body>
 </html>

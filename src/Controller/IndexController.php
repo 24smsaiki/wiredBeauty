@@ -41,4 +41,28 @@ class IndexController extends AbstractController
             "id" => $id
         ]);
     }
+
+    /**
+     * @Route("/our-solution", name="our_solution")
+     */
+    public function showOurSolution()
+    {
+        return $this->render('solution/index.html.twig');
+    }
+
+    /**
+     * @Route("/scientific-validation", name="scientific_validation")
+     */
+    public function showScientificValidation()
+    {
+        return $this->render('pages/scientific_validation.html.twig');
+    }
+
+    /**
+     * @Route("/contact", name="contact")
+     */
+    public function contact()
+    {
+        return $this->render('pages/contact.html.twig');
+    }
 }
