@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Upload test{% endblock %}
+{% block title %}{{ parent() }} - Import CSV{% endblock %}
 
 {% block body %}
     {% for message in app.flashes('success') %}
@@ -23,13 +23,13 @@
         <div class="row mt-5 mx-auto text-center">
             <div class="col">
                 {{ form_start(form, { attr: { 'accept-charset' : 'utf-8' }}) }}
-                <div class="form-group">
+                <div class="form-group col-md-8 mx-auto">
                     {{ form_label(form.upload_file) }}
-                    {{ form_widget(form.upload_file) }}
+                    {{ form_widget(form.upload_file, {attr: {'class': 'form-control'}}) }}
                     {{ form_errors(form.upload_file) }}
                 </div>
                 <div class="form-group mt-5">
-                    {{ form_widget(form.send, {'label': "Upload this file", 'attr' : { 'class': 'btn btn-primary' }}) }}
+                    {{ form_widget(form.send, {'label': "Upload this file", 'attr' : { 'class': 'cta-primary-1' }}) }}
                 </div>
                 {{ form_rest(form) }}
                 {{ form_end(form) }}
