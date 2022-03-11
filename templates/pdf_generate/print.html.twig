@@ -120,6 +120,7 @@ $('#downloadPdf').click(function(event) {
   
   var pdf = new jsPDF('landscape');
   pdf.addImage($(pdfCanvas)[0], 'PNG', 0, 0);
+  pdf.fromHTML($('#reportPage').get(0), 15, 15);
   
   pdf.save('rapport.pdf');
 });
