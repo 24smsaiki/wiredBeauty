@@ -22,9 +22,11 @@
     {% endif %}
 
     {% block body %}{% endblock %}
-    {% if hide_navbar is not defined %}
+
+    {% if app.user is not null and "ROLE_ADMIN" not in app.user.roles %}
         {% include 'components/footer.html.twig' %}
     {% endif %}
+
      {% block chatbot %}
         {% include('chatbot/index.html.twig') %}
     {% endblock %}
