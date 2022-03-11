@@ -10,15 +10,15 @@
 <div id="reportPage">
     <div class="container">
     
-<a class="btn btn-primary" href="#" id="downloadPdf">Generer le pdf</a>
+<a class="btn btn-primary" onclick="myFunction()" href="#" id="downloadPdf">Generer le pdf</a>
         <h3>Moyenne de score : {{average}}</h3>
         
         <div>
             <h4> Score 1 Hydratant </h4>
-            <div style="width: 25%; display:inline-block">
+            <div style="width: 40%; display:inline-block">
                 {{render_chart(chart1, {'id': 'my-chart1'}) }}
             </div>
-            <div style="width: 25%; float: left;">
+            <div style="width: 40%; float: left;">
                 {{render_chart(chart2, {'id': 'my-chart2'}) }}
             </div>
         </div>
@@ -26,54 +26,55 @@
 
         <div>
             <h4>Score 2 Antioxydant </h4>
-            <div style="width: 25%; display:inline-block">
+            <div style="width: 40%; display:inline-block">
                 {{render_chart(chart3, {'id': 'my-chart3'}) }}
             </div>
-            <div style="width: 25%; display:inline-block">
+            <div style="width: 40%; display:inline-block">
                 {{render_chart(chart4, {'id': 'my-chart4'}) }}
             </div>
 
             <div class="form-group">
                 <label for="commentaire">commentaire :</label>
-                <textarea class="form-control" aria-label="With textarea"></textarea>
+                <textarea id="comment2" class="form-control" aria-label="With textarea"></textarea>
+                <p id="printComment2" style="display:none;"></p>
             </div>
-
         </div>
 
         <div>
             <h4>Score 3 Barrière</h4>
-            <div style="width: 25%; display:inline-block">
+            <div style="width: 40%; display:inline-block">
                 {{render_chart(chart5, {'id': 'my-chart5'}) }}
             </div>
-            <div style="width: 25%; display:inline-block">
+            <div style="width: 40%; display:inline-block">
                 {{render_chart(chart6, {'id': 'my-chart6'}) }}
             </div>
 
             <div class="form-group">
                 <label for="commentaire">commentaire :</label>
-                <textarea class="form-control" aria-label="With textarea"></textarea>
+                <textarea id="comment3" class="form-control" aria-label="With textarea"></textarea>
+                <p id="printComment3" style="display:none;"></p>
             </div>
         </div>
 
         <div>
             <h4>Peau non traité</h4>
-            <div style="width: 25%; display:inline-block">
+            <div style="width: 40%; display:inline-block">
                 {{render_chart(chart7, {'id': 'my-chart7'}) }}
             </div>
              <div class="form-group">
                 <label for="commentaire">commentaire :</label>
-                <textarea class="form-control" aria-label="With textarea"></textarea>
+                <textarea id="comment4" class="form-control" aria-label="With textarea"></textarea>
+                <p id="printComment4" style="display:none;"></p>
             </div>
 
            
         </div>
 
        
-
         <h4>Avis global</h4>
         <h4>Efficacité</h4>
         <h4>Usage</h4>
-        <h4>DEVICE IOT</h4>
+        
     
     </div>
   <br/><br/><br/>
@@ -120,10 +121,22 @@ $('#downloadPdf').click(function(event) {
   
   var pdf = new jsPDF('landscape');
   pdf.addImage($(pdfCanvas)[0], 'PNG', 0, 0);
+  pdf.addPage();
   pdf.fromHTML($('#reportPage').get(0), 15, 15);
   
   pdf.save('rapport.pdf');
 });
+
+function myFunction() {
+    var x = document.getElementById("comment2").value;
+    document.getElementById("printComment2").innerHTML = x;
+
+    var y = document.getElementById("comment3").value;
+    document.getElementById("printComment3").innerHTML = y;
+
+    var z = document.getElementById("comment4").value;
+    document.getElementById("printComment4").innerHTML = z;
+}
 </script>
 
 
