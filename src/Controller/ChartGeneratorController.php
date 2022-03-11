@@ -174,7 +174,8 @@ class ChartGeneratorController extends AbstractController
             'chart5' => $chart5,
             'chart6' => $chart6,
             'chart7' => $chart7,
-            'average' => $average 
+            'average' => $average ,
+            'hide_navbar' => true
         ]);
     }
 

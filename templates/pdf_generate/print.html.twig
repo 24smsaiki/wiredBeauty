@@ -2,142 +2,141 @@
 
 
 {% block body %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.debug.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.debug.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
-<br/><br/>
-<div id="reportPage">
-    <div class="container">
-    
-<a class="btn btn-primary" onclick="myFunction()" href="#" id="downloadPdf">Generer le pdf</a>
-        <h3>Moyenne de score : {{average}}</h3>
-        
-        <div>
-            <h4> Score 1 Hydratant </h4>
-            <div style="width: 40%; display:inline-block">
-                {{render_chart(chart1, {'id': 'my-chart1'}) }}
+    <br/><br/>
+    <div id="reportPage">
+        <div class="container mx-auto text-center">
+
+            <a class="cta-primary-a text-decoration-none" onclick="myFunction()" href="#" id="downloadPdf">Generate
+                PDF</a>
+            <h3 class="mt-5">Score average : {{ average }}</h3>
+
+            <div class="mt-5">
+                <h4> Score 1 Hydratant </h4>
+                <div style="width: 40%; display:inline-block">
+                    {{ render_chart(chart1, {'id': 'my-chart1'}) }}
+                </div>
+                <div style="width: 40%; float: left;">
+                    {{ render_chart(chart2, {'id': 'my-chart2'}) }}
+                </div>
             </div>
-            <div style="width: 40%; float: left;">
-                {{render_chart(chart2, {'id': 'my-chart2'}) }}
+            <br>
+
+            <div class="mt-5">
+                <h4>Score 2 Antioxydant </h4>
+                <div style="width: 40%; display:inline-block">
+                    {{ render_chart(chart3, {'id': 'my-chart3'}) }}
+                </div>
+                <div style="width: 40%; display:inline-block">
+                    {{ render_chart(chart4, {'id': 'my-chart4'}) }}
+                </div>
+
+                <div class="form-group">
+                    <label for="commentaire">Comment :</label>
+                    <textarea id="comment2" class="form-control" aria-label="With textarea"></textarea>
+                    <p id="printComment2" style="display:none;"></p>
+                </div>
             </div>
+
+            <div class="mt-5">
+                <h4>Score 3 Barrière</h4>
+                <div style="width: 40%; display:inline-block">
+                    {{ render_chart(chart5, {'id': 'my-chart5'}) }}
+                </div>
+                <div style="width: 40%; display:inline-block">
+                    {{ render_chart(chart6, {'id': 'my-chart6'}) }}
+                </div>
+
+                <div class="form-group">
+                    <label for="commentaire">Comment :</label>
+                    <textarea id="comment3" class="form-control" aria-label="With textarea"></textarea>
+                    <p id="printComment3" style="display:none;"></p>
+                </div>
+            </div>
+
+            <div class="mt-5">
+                <h4>Untreated skin</h4>
+                <div style="width: 40%; display:inline-block">
+                    {{ render_chart(chart7, {'id': 'my-chart7'}) }}
+                </div>
+                <div class="form-group">
+                    <label for="commentaire">Comment :</label>
+                    <textarea id="comment4" class="form-control" aria-label="With textarea"></textarea>
+                    <p id="printComment4" style="display:none;"></p>
+                </div>
+
+
+            </div>
+
+
+            <h4 class="mt-5">Global feedback</h4>
+            <h4 class="mt-5">Efficiency</h4>
+            <h4 class="mt-5">Usage</h4>
+
+
         </div>
-        <br>
-
-        <div>
-            <h4>Score 2 Antioxydant </h4>
-            <div style="width: 40%; display:inline-block">
-                {{render_chart(chart3, {'id': 'my-chart3'}) }}
-            </div>
-            <div style="width: 40%; display:inline-block">
-                {{render_chart(chart4, {'id': 'my-chart4'}) }}
-            </div>
-
-            <div class="form-group">
-                <label for="commentaire">commentaire :</label>
-                <textarea id="comment2" class="form-control" aria-label="With textarea"></textarea>
-                <p id="printComment2" style="display:none;"></p>
-            </div>
-        </div>
-
-        <div>
-            <h4>Score 3 Barrière</h4>
-            <div style="width: 40%; display:inline-block">
-                {{render_chart(chart5, {'id': 'my-chart5'}) }}
-            </div>
-            <div style="width: 40%; display:inline-block">
-                {{render_chart(chart6, {'id': 'my-chart6'}) }}
-            </div>
-
-            <div class="form-group">
-                <label for="commentaire">commentaire :</label>
-                <textarea id="comment3" class="form-control" aria-label="With textarea"></textarea>
-                <p id="printComment3" style="display:none;"></p>
-            </div>
-        </div>
-
-        <div>
-            <h4>Peau non traité</h4>
-            <div style="width: 40%; display:inline-block">
-                {{render_chart(chart7, {'id': 'my-chart7'}) }}
-            </div>
-             <div class="form-group">
-                <label for="commentaire">commentaire :</label>
-                <textarea id="comment4" class="form-control" aria-label="With textarea"></textarea>
-                <p id="printComment4" style="display:none;"></p>
-            </div>
-
-           
-        </div>
-
-       
-        <h4>Avis global</h4>
-        <h4>Efficacité</h4>
-        <h4>Usage</h4>
-        
-    
+        <br/><br/><br/>
     </div>
-  <br/><br/><br/>
-</div>
 
 
-<script>
+    <script>
 
 
-var randomScalingFactor = function() {
-  return (Math.random() > 0.5 ? 1.0 : 1.0) * Math.round(Math.random() * 100);
-};
+        var randomScalingFactor = function () {
+            return (Math.random() > 0.5 ? 1.0 : 1.0) * Math.round(Math.random() * 100);
+        };
 
 
+        $('#downloadPdf').click(function (event) {
+            var reportPageHeight = 2000;
+            var reportPageWidth = 2000;
 
+            var pdfCanvas = $('<canvas />').attr({
+                id: "canvaspdf",
+                width: reportPageWidth,
+                height: reportPageHeight
+            });
 
-$('#downloadPdf').click(function(event) {
-  var reportPageHeight = 2000;
-  var reportPageWidth = 2000;
-  
-  var pdfCanvas = $('<canvas />').attr({
-    id: "canvaspdf",
-    width: reportPageWidth,
-    height: reportPageHeight
-  });
-  
-  var pdfctx = $(pdfCanvas)[0].getContext('2d');
-  var pdfctxX = 0;
-  var pdfctxY = 0;
-  var buffer = 100;
-  
-  $("canvas").each(function(index) {
-    var canvasHeight = $(this).innerHeight();
-    var canvasWidth = $(this).innerWidth();
-    
-    pdfctx.drawImage($(this)[0], pdfctxX, pdfctxY, canvasWidth, canvasHeight);
-    pdfctxX += canvasWidth + buffer;
-    
-    if (index % 2 === 1) {
-      pdfctxX = 0;
-      pdfctxY += canvasHeight + buffer;
-    }
-  });
-  
-  var pdf = new jsPDF('landscape');
-  pdf.addImage($(pdfCanvas)[0], 'PNG', 0, 0);
-  pdf.addPage();
-  pdf.fromHTML($('#reportPage').get(0), 15, 15);
-  
-  pdf.save('rapport.pdf');
-});
+            var pdfctx = $(pdfCanvas)[0].getContext('2d');
+            var pdfctxX = 0;
+            var pdfctxY = 0;
+            var buffer = 100;
 
-function myFunction() {
-    var x = document.getElementById("comment2").value;
-    document.getElementById("printComment2").innerHTML = x;
+            $("canvas").each(function (index) {
+                var canvasHeight = $(this).innerHeight();
+                var canvasWidth = $(this).innerWidth();
 
-    var y = document.getElementById("comment3").value;
-    document.getElementById("printComment3").innerHTML = y;
+                pdfctx.drawImage($(this)[0], pdfctxX, pdfctxY, canvasWidth, canvasHeight);
+                pdfctxX += canvasWidth + buffer;
 
-    var z = document.getElementById("comment4").value;
-    document.getElementById("printComment4").innerHTML = z;
-}
-</script>
+                if (index % 2 === 1) {
+                    pdfctxX = 0;
+                    pdfctxY += canvasHeight + buffer;
+                }
+            });
+
+            var pdf = new jsPDF('landscape');
+            pdf.addImage($(pdfCanvas)[0], 'PNG', 0, 0);
+            pdf.addPage();
+            pdf.fromHTML($('#reportPage').get(0), 15, 15);
+
+            pdf.save('rapport.pdf');
+        });
+
+        function myFunction() {
+            var x = document.getElementById("comment2").value;
+            document.getElementById("printComment2").innerHTML = x;
+
+            var y = document.getElementById("comment3").value;
+            document.getElementById("printComment3").innerHTML = y;
+
+            var z = document.getElementById("comment4").value;
+            document.getElementById("printComment4").innerHTML = z;
+        }
+    </script>
 
 
 
