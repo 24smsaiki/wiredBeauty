@@ -136,20 +136,16 @@ class ChartGeneratorController extends AbstractController
         return $chart;
     }
     
-    #[Route('/generate/{importId}', name: 'rapport')]
-    
+  
+     /**
+     * @Route("/generate/{importId}", name="rapport")
+     */
     public function generate($importId) {
         $chart = $this->entityManager->getRepository(Skinbiosense::class)->findByImportId($importId);
         if ( $chart[0]->getUser() == $this->getUser() ) {
         
             $scoreAverageArray = $this->average('scoreSkinbiosense');
             $average = array_sum($scoreAverageArray) / count($scoreAverageArray);
-            #731459
-#D3D326
-#398A98
-#26D389
-#7A86A1
-#B87F76
             
             $chart1 = $this->chart(Chart::TYPE_LINE,$this->search('id','scoreSkinbiosense',1),$this->search('mesure','scoreSkinbiosense',1), '#731459');
             $chart2 = $this->chart(Chart::TYPE_BAR,$this->search('id','scoreSkinbiosense',1),$this->search('zoneCode','scoreSkinbiosense',1), '#D3D326');  
@@ -179,7 +175,10 @@ class ChartGeneratorController extends AbstractController
         ]);
     }
 
-    #[Route('/chart/history', name: 'history')]
+  
+    /**
+     * @Route("/chart/history", name="history")
+     */
     
     public function history() {
         $imports = $this->entityManager->getRepository(Skinbiosense::class)->findByUser($this->getUser());

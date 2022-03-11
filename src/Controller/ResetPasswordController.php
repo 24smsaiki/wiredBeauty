@@ -31,7 +31,10 @@ class ResetPasswordController extends AbstractController
         $this->mailer = $mailer;
     }
 
-    #[Route('/reset/password', name: 'reset_password')]
+   
+    /**
+     * @Route("//reset/password", name="reset_password")
+     */
     public function reset(Request $request)
     {
         if ($this->getUser()) {
@@ -69,7 +72,10 @@ class ResetPasswordController extends AbstractController
         ]);
     }
 
-    #[Route('/update/password/{token}', name: 'update_password')]
+   
+    /**
+     * @Route("/update/password/{token}", name="update_password")
+     */
     public function update(Request $request, $token, UserPasswordHasherInterface $encoder)
     {
 
