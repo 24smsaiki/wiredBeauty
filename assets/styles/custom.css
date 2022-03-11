@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital@0;1&display=swap');
 
 .cta-primary-1 { background-color: #731459; border: #731459 solid 2px; color: #fff !important; width:250px; min-height: 40px; border-radius: 10px}
+.cta-primary-a { background-color: #731459; border: #731459 solid 12px; color: #fff !important; width:450px; min-height: 50px; border-radius: 10px}
 .cta-primary-1-other { background-color: #731459; border: #731459 solid 2px; color: #fff !important; width:100px; min-height: 40px; border-radius: 10px}
 .cta-primary-disabled { background-color: #dbdbdb; border: #dbdbdb solid 2px; color: #9b9a9a !important; width:250px; min-height: 40px; border-radius: 10px}
 .cta-text-1 { color: #398A98; text-decoration: none;}

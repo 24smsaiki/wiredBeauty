@@ -46,11 +46,9 @@
                             <a class="cta-primary-1" href="{{ path('app_upload') }}">CSV Import</a>
                         </li> #}
                     {% endif %}
-                    {% if app.user is not null and "ROLE_ADMIN" not in app.user.roles %}
-                        <li class="pe-3 pt-2">
-                            <a class="cta-text-1" href="#">Become a panelist</a>
-                        </li>
-                    {% endif %}
+                    <li class="pe-3 pt-2">
+                        <a class="cta-text-1" href="{{ path('contact') }}">Become a panelist</a>
+                    </li>
                     {% if app.user %}
                         <li>
                             <button type="button" class="cta-primary-1-other"><a id="sign_button"
@@ -69,3 +67,19 @@
         </div>
     </div>
 </nav>
+
+<script>
+    function activePage() {
+        var pageUrl = window.location.pathname;
+        var navlink = document.getElementsByClassName("nav-link");
+
+        for (let i = 0; i < navlink.length; i++) {
+            var btn = navlink.item(i);
+            if (btn.getAttribute("href") == pageUrl) {
+                btn.className = "cta-primary-a text-decoration-none";
+            }
+        }
+    }
+
+    window.onload = activePage;
+</script>
