@@ -186,6 +186,7 @@ class ChartGeneratorController extends AbstractController
     
         return $this->render('charts_history/index.html.twig', [
             "myCharts" => $myCharts,
+            "hide_navbar" => true
         ]);
     }
 

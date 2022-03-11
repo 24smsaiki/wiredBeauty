@@ -1,0 +1,116 @@
+#sidebar {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  transition: all 0.3s;
+  float: left;
+  padding-top: 50px;
+  border-right: solid 1px gray;
+}
+
+.logoPassion {
+  width: 228px;
+  height: 77px;
+}
+
+#avatar_sidebar {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+#sidebar.active {
+  margin-left: -350px;
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+.cadre {
+  max-width: 100%;
+  margin: auto;
+
+  a {
+    border-left: 3px solid transparent;
+    text-decoration: none;
+    color: black;
+  }
+
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+  width: calc(100% - 350px);
+  padding: 40px;
+  min-height: 100vh;
+  transition: all 0.3s;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#content.active {
+  width: 100%;
+}
+
+#sidebarCollapse {
+  display: none;
+}
+
+body {
+  margin-left: 250px;
+}
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -350px;
+  }
+
+  body {
+    margin-left: 0;
+  }
+
+  #logoPassion {
+    margin-top: 5px;
+  }
+
+  #sidebar.active {
+    margin-left: 0;
+  }
+
+  #content {
+    width: 100%;
+  }
+
+  #content.active {
+    width: calc(100% - 350px);
+  }
+
+  #sidebarCollapse {
+    display: block;
+    float: right;
+  }
+
+  #sidebarCollapse span {
+    display: none;
+  }
+}
+
+// ################################ AUTRES
+
+#profile_avatar {
+  width: 200px;
+  height: 200px;
+}

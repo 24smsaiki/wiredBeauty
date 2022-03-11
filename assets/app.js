@@ -19,6 +19,7 @@ import './styles/studies-services.css';
 import './styles/blog.css';
 import './styles/beauty_science.scss';
 import './styles/story.scss';
+import './styles/sidebar.scss';
 
 
 const $ = require('jquery');

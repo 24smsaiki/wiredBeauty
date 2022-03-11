@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Request{% endblock %}
+
+{% block body %}
+    <div class="container-fluid" style="padding-left: 300px">
+        <div class="row mt-5">
+            <div class="col mt-2">
+                <h1 class="cta-text-1"><b>Request</b></h1>
+                <p>Hello {{ app.user.email }}, welcome back!</p>
+            </div>
+        </div>
+
+        <div class="row mx-auto text-center">
+            <div class="col">
+                <img src="{{ asset('images/library/back/message/message.png') }}" alt="Overview" class="img-fluid" >
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

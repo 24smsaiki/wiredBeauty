@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ parent() }} - Homepage {% endblock %}
+{% block title %}{{ parent() }} - Professionnal Homepage {% endblock %}
 
 {% block body %}
     {% for message in app.flashes('success') %}
@@ -15,10 +15,35 @@
     {% endfor %}
     {% include 'app/cookies_popup.html.twig' %}
 
-    <div class="container-fluid">
-        {% if is_granted("ROLE_ADMIN") %}
+    {% if is_granted("ROLE_ADMIN") %}
+        <div class="container-fluid" style="padding-left: 300px">
+            <div class="row mt-5">
+                <div class="col mt-2">
+                    <h1 class="cta-text-1"><b>Dashboard</b></h1>
+                    <p>Hello {{ app.user.email }}, welcome back!</p>
+                </div>
+            </div>
+            
+            <div class="row mt-5 mx-auto text-center ms-5">
+                <div class="col col-md-5">
+                    <img src="{{ asset('images/library/back/dashbord/overview.png') }}" alt="Overview" class="img-fluid" width="800">
+                </div>
+                <div class="col col-md-5">
+                    <img src="{{ asset('images/library/back/dashbord/card_score.png') }}" alt="Overview" class="img-fluid" width="600">
+                </div>
+            </div>
 
-        {% else %}
+            <div class="row mt-5 mx-auto text-center ms-5">
+                <div class="col col-md-5">
+                    <img src="{{ asset('images/library/back/dashbord/project_progress.png') }}" alt="Overview" class="img-fluid" width="800">
+                </div>
+                <div class="col col-md-6">
+                    <img src="{{ asset('images/library/back/dashbord/score_skinbiosense.png') }}" alt="Overview" class="img-fluid" width="700">
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="container-fluid">
 
             {# FIRST ROW #}
             <div class="row mt-5">
@@ -204,8 +229,8 @@
                     </div>
                 </div>
             </div>
-        {% endif %}
-    </div>
+        </div>
+    {% endif %}
 {% endblock %}
 
 {% block javascripts %}
