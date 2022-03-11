@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ChartsHistoryController!{% endblock %}
+
+{% block body %}
+    {% for history in myCharts %}
+       
+       <a class="btn btn-primary" href="{{path('rapport', {'importId': history }) }}">Rapport - {{history}}</a>
+      
+    {% endfor %}
+{% endblock %}

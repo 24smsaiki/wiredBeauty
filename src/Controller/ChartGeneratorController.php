@@ -138,22 +138,28 @@ class ChartGeneratorController extends AbstractController
     
     #[Route('/generate/{importId}', name: 'rapport')]
     
-    public function generate() {
+    public function generate($importId) {
+        $skin = $this->entityManager->getRepository(Skinbiosense::class)->findByImportId($importId);
+        if ( $skin[0]->getUser() == $this->getUser() ) {
         
-        $scoreAverageArray = $this->average('scoreSkinbiosense');
-        $average = array_sum($scoreAverageArray) / count($scoreAverageArray);
-       
-        $chart1 = $this->chart(Chart::TYPE_LINE,$this->search('id','scoreSkinbiosense',1),$this->search('mesure','scoreSkinbiosense',1));
-        $chart2 = $this->chart(Chart::TYPE_BAR,$this->search('id','scoreSkinbiosense',1),$this->search('zoneCode','scoreSkinbiosense',1));  
-
-        $chart3 = $this->chart(Chart::TYPE_LINE,$this->search('id','scoreSkinbiosense',2),$this->search('mesure','scoreSkinbiosense',2));
-        $chart4 = $this->chart(Chart::TYPE_BAR,$this->search('id','scoreSkinbiosense',2),$this->search('zoneCode','scoreSkinbiosense',2));
+            $scoreAverageArray = $this->average('scoreSkinbiosense');
+            $average = array_sum($scoreAverageArray) / count($scoreAverageArray);
+            
+            $chart1 = $this->chart(Chart::TYPE_LINE,$this->search('id','scoreSkinbiosense',1),$this->search('mesure','scoreSkinbiosense',1));
+            $chart2 = $this->chart(Chart::TYPE_BAR,$this->search('id','scoreSkinbiosense',1),$this->search('zoneCode','scoreSkinbiosense',1));  
+            
+            $chart3 = $this->chart(Chart::TYPE_LINE,$this->search('id','scoreSkinbiosense',2),$this->search('mesure','scoreSkinbiosense',2));
+            $chart4 = $this->chart(Chart::TYPE_BAR,$this->search('id','scoreSkinbiosense',2),$this->search('zoneCode','scoreSkinbiosense',2));
+            
+            $chart5 = $this->chart(Chart::TYPE_LINE,$this->search('id','scoreSkinbiosense',3),$this->search('mesure','scoreSkinbiosense',3));
+            $chart6 = $this->chart(Chart::TYPE_BAR,$this->search('id','scoreSkinbiosense',3),$this->search('zoneCode','scoreSkinbiosense',3));
+            
+            $chart7 = $this->multiAxis(Chart::TYPE_LINE,$this->average('id'),$this->search('mesure','scoreSkinbiosense',1),$this->search('mesure','scoreSkinbiosense',2),$this->search('mesure','scoreSkinbiosense',3));
         
-        $chart5 = $this->chart(Chart::TYPE_LINE,$this->search('id','scoreSkinbiosense',3),$this->search('mesure','scoreSkinbiosense',3));
-        $chart6 = $this->chart(Chart::TYPE_BAR,$this->search('id','scoreSkinbiosense',3),$this->search('zoneCode','scoreSkinbiosense',3));
+        } else {
+            return $this->redirectToRoute('login');
+        }
 
-        $chart7 = $this->multiAxis(Chart::TYPE_LINE,$this->average('id'),$this->search('mesure','scoreSkinbiosense',1),$this->search('mesure','scoreSkinbiosense',2),$this->search('mesure','scoreSkinbiosense',3));
-  
         return $this->render('pdf_generate/print.html.twig', [
             'chart1' => $chart1,
             'chart2' => $chart2,
@@ -163,6 +169,23 @@ class ChartGeneratorController extends AbstractController
             'chart6' => $chart6,
             'chart7' => $chart7,
             'average' => $average 
+        ]);
+    }
+
+    #[Route('/chart/history', name: 'history')]
+    
+    public function history() {
+        $imports = $this->entityManager->getRepository(Skinbiosense::class)->findByUser($this->getUser());
+        $myCharts = [];
+
+        foreach ($imports as $import) {
+            array_push($myCharts,$import->getImportId());
+        }
+
+        $myCharts = array_unique($myCharts);
+    
+        return $this->render('charts_history/index.html.twig', [
+            "myCharts" => $myCharts,
         ]);
     }
 
