@@ -1,11 +1,41 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ChartsHistoryController!{% endblock %}
+{% block title %}{{ parent() }} - View reports{% endblock %}
 
 {% block body %}
-    {% for history in myCharts %}
-       
-       <a class="btn btn-primary" href="{{path('rapport', {'importId': history }) }}">Rapport - {{history}}</a>
-      
-    {% endfor %}
+    <div class="container-fluid" style="padding-left: 300px">
+        <div class="row mt-5">
+            <div class="col mt-2">
+                <h1 class="cta-text-1"><b>Report</b></h1>
+                <p>Hello {{ app.user.email }}, welcome back!</p>
+            </div>
+        </div>
+        <div class="row mt-5 mx-auto text-center">
+            <div class="col mt-5">
+                <table class="table table-responsive table-sm">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">User email</th>
+                        <th scope="col">Operation</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for history in myCharts %}
+                        <tr>
+                            <th scope="row">{{ history }}</th>
+                            <td>{{ app.user.email }}</td>
+                            <td>
+                                <button class="cta-primary-1">
+                                    <a class="text-decoration-none text-white"
+                                       href="{{ path('rapport', {'importId': history }) }}">Download (PDF)</a>
+                                </button>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 {% endblock %}

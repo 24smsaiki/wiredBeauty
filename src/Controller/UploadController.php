@@ -54,6 +54,7 @@ class UploadController extends AbstractController
         }
         return $this->render('app/upload_form.html.twig', [
             'form' => $form->createView(),
+            'hide_navbar' => true
         ]);
     }
     // ...

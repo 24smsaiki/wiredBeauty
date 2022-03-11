@@ -17,8 +17,12 @@
         
     </head>
     <body>
-    {% if hide_navbar is not defined %}
+    {% if hide_navbar is not defined or is_granted("ROLE_ADMIN") == false %}
         {% include 'components/navbar.html.twig' %}
+    {% endif %}
+
+    {% if app.user is not null and is_granted("ROLE_ADMIN") %}
+        {% include 'components/sidebar.html.twig' %}
     {% endif %}
 
     {% block body %}{% endblock %}

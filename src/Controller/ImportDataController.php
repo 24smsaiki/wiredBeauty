@@ -39,7 +39,7 @@ class ImportDataController extends AbstractController
                     $skinBiosense->setScoreSkinbiosense($parser->get('score_skinbiosense'));
                     $skinBiosense->setZoneCode($parser->get('zone_code'));
                     $skinBiosense->setProductCode($parser->get('product_code'));
-                    $skinBiosense->setKpi($parser->get('KPI'));
+                    $skinBiosense->setKpi(floatval($parser->get('KPI')));
                     $skinBiosense->setUser($user[0]);
                     $skinBiosense->setImportId($importId);
 

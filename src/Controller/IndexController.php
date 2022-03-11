@@ -13,6 +13,13 @@ class IndexController extends AbstractController
      */
     public function index()
     {
+        if (!empty($this->getUser())) {
+            if ($this->isGranted("ROLE_ADMIN")) {
+                return $this->render('index.html.twig', [
+                    'hide_navbar' => true
+                ]);
+            }
+        }
         return $this->render('index.html.twig');
     }
 
@@ -64,5 +71,25 @@ class IndexController extends AbstractController
     public function contact()
     {
         return $this->render('pages/contact.html.twig');
+    }
+
+    /**
+     * @Route("/product", name="product")
+     */
+    public function product()
+    {
+        return $this->render('admin/product.html.twig', [
+            'hide_navbar' => true
+        ]);
+    }
+
+    /**
+     * @Route("/request", name="request")
+     */
+    public function request()
+    {
+        return $this->render('admin/request.html.twig', [
+            'hide_navbar' => true
+        ]);
     }
 }
