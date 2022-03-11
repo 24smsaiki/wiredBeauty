@@ -1,74 +1,169 @@
-<nav id="wb_navbar" class="navbar navbar-expand-lg navbar-light ps-5 pe-5">
-    <div class="container-fluid">
+<header id="navheader" class="header">
+    <nav class="navbar">
         <a href="/"><img src="{{ asset('Logo_wired_beauty.png') }}" alt="Logo WB" width="110"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            {% if is_granted("ROLE_ADMIN") == false %}
-                <ul id="ul_links" class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_index') }}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('studies_and_services') }}">Studies & Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('our_solution') }}">Our solution</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('scientific_validation') }}">Scientific Validation</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('index_about_us') }}">About us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('contact') }}">Contact</a>
-                    </li>
-                    {# <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li> #}
-                </ul>
+        <ul class="nav-menu mx-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_index') }}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('studies_and_services') }}">Studies & Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('our_solution') }}">Our solution</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('scientific_validation') }}">Scientific Validation</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('index_about_us') }}">About us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('contact') }}">Contact</a>
+            </li>
+            {% if is_granted("ROLE_ADMIN") %}
+                <li class="nav-item">
+                    <a class="nav-link cta-primary-1" href="{{ path('app_upload') }}">CSV Import</a>
+                </li>
+
             {% endif %}
-            <div class="d-flex mx-auto">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    {% if is_granted("ROLE_ADMIN") %}
-                        {# <li class="pe-3 pt-2">
-                            <a class="cta-primary-1" href="{{ path('app_upload') }}">CSV Import</a>
-                        </li> #}
-                    {% endif %}
-                    <li class="pe-3 pt-2">
-                        <a class="cta-text-1" href="{{ path('contact') }}">Become a panelist</a>
-                    </li>
-                    {% if app.user %}
-                        <li>
-                            <button type="button" class="cta-primary-1-other"><a id="sign_button"
-                                                                                 href="{{ path('app_logout') }}">Sign
-                                    out</a></button>
-                        </li>
-                    {% else %}
-                        <li>
-                            <button type="button" class="cta-primary-1-other"><a id="sign_button"
-                                                                                 href="{{ path('login') }}">Sign in</a>
-                            </button>
-                        </li>
-                    {% endif %}
-                </ul>
-            </div>
+            <li class="nav-item">
+                <a class="cta-text-nb ms-5" href="{{ path('contact') }}">Become a panelist</a>
+            </li>
+            {% if app.user %}
+                <li class="nav-item">
+                    <a class="nav-link cta-primary-1-other text-center" href="{{ path('app_logout') }}">Sign out</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link cta-primary-1-other text-center" href="{{ path('login') }}">Sign in</a>
+                </li>
+            {% endif %}
+        </ul>
+        <ul class="nav-menu">
+
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
-    </div>
-</nav>
+    </nav>
+</header>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
+
+
+    /*html {
+        font-size: 62.5%;
+        font-family: 'Montserrat', sans-serif;
+    }*/
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    /*.navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+    }*/
+
+    .hamburger {
+        display: none;
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        background-color: #101010;
+    }
+
+    .nav-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-item {
+        margin-left: 5rem;
+    }
+
+    .nav-link {
+        /*font-size: 1.6rem;*/
+        font-weight: 400;
+        color: #475569;
+    }
+
+    .nav-link:hover {
+        color: #482ff7;
+    }
+
+    @media only screen and (max-width: 1300px) {
+        .nav-menu {
+            position: fixed;
+            left: -100%;
+            top: 5rem;
+            flex-direction: column;
+            background-color: #fff;
+            width: 100%;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        }
+
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .nav-menu.active {
+            left: 0;
+        }
+
+        .nav-item {
+            /*margin: 2.5rem 0;*/
+            margin-bottom: 10px;
+        }
+
+        .hamburger {
+            display: block;
+            cursor: pointer;
+        }
+
+    }
+</style>
 
 <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+    console.log(navMenu)
+
+    hamburger.addEventListener("click", mobileMenu);
+
+    function mobileMenu() {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+    }
+
     function activePage() {
         var pageUrl = window.location.pathname;
         var navlink = document.getElementsByClassName("nav-link");

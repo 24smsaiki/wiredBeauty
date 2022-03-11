@@ -23,14 +23,16 @@
                     <p>Hello {{ app.user.email }}, welcome back!</p>
                 </div>
             </div>
-            
+
             <div class="row mt-5 mx-auto text-center">
                 <div class="col col-sm-1" id="hide_col"></div>
                 <div class="col col-md-5">
-                    <img src="{{ asset('images/library/back/dashbord/overview.png') }}" alt="Overview" class="img-fluid">
+                    <img src="{{ asset('images/library/back/dashbord/overview.png') }}" alt="Overview"
+                         class="img-fluid">
                 </div>
                 <div class="col col-md-5">
-                    <img src="{{ asset('images/library/back/dashbord/card_score.png') }}" alt="Overview" class="img-fluid">
+                    <img src="{{ asset('images/library/back/dashbord/card_score.png') }}" alt="Overview"
+                         class="img-fluid">
                 </div>
                 <div class="col col-sm-1" id="hide_col"></div>
             </div>
@@ -38,10 +40,12 @@
             <div class="row mx-auto text-center">
                 <div class="col col-sm-1" id="hide_col"></div>
                 <div class="col col-md-5">
-                    <img src="{{ asset('images/library/back/dashbord/project_progress.png') }}" alt="Overview" class="img-fluid" >
+                    <img src="{{ asset('images/library/back/dashbord/project_progress.png') }}" alt="Overview"
+                         class="img-fluid">
                 </div>
                 <div class="col col-md-5">
-                    <img src="{{ asset('images/library/back/dashbord/score_skinbiosense.png') }}" alt="Overview" class="img-fluid">
+                    <img src="{{ asset('images/library/back/dashbord/score_skinbiosense.png') }}" alt="Overview"
+                         class="img-fluid">
                 </div>
                 <div class="col col-sm-1" id="hide_col"></div>
             </div>
@@ -50,22 +54,18 @@
         <div class="container-fluid">
 
             {# FIRST ROW #}
-            <div class="row mt-5">
-                <div class="col col-sm-1" id="hide_col"></div>
-                <div class="col mt-5">
-                    <span class="first_title">Objectively measure the vitality criteria of the skin</span>
+            <div class="row mt-5 mx-auto">
+                <div class="col col-md-5 mt-5 mx-auto">
+                    <h1 class="display-3 fw-bold"><b>Objectively measure the vitality criteria of the skin</b></h1>
                     <div class="mt-5">
-                        <button class="cta-primary-1"><a class="text-decoration-none text-white"
-                                                         href="{{ path('scientific_validation') }}">Discover</a>
-                        </button>
+                        <a href="{{ path('scientific_validation') }}"
+                           class="text-decoration-none text-white cta-primary-a2">Discover</a>
                     </div>
 
                 </div>
-                <div class="col col-sm-1" id="hide_col"></div>
-                <div class="col me-5 mt-5">
+                <div class="col col-md-4 mt-5 mx-auto">
                     <img src="{{ asset('images/library/img_hero.png') }}" alt="Img Hero" width="450">
                 </div>
-                <div class="col col-sm-1" id="hide_col"></div>
             </div>
 
             {# SECOND ROW #}
@@ -80,21 +80,20 @@
                     </svg>
                 </div>
                 <div class="col mx-auto">
-                    <div class="texte mx-auto">
-                        <h3 class="About-us">About <span class="cta-text-1">us</span></h3>
-                        <p>
-                            <b>Wired Beauty</b>
-                            as of today is a saas based start-up co-founded by Stanislas and Sophie, two beauty experts
-                            who
-                            become friends while working toghether at
-                            <b>l’Oréal</b>.
-                        </p>
-                        <br>
-                        <button class="cta-primary-1"><a class="text-decoration-none text-white"
-                                                         href="{{ path('index_about_us') }}">Learn more</a></button>
+                    <h1><b>About <span class="cta-text-1">us</span></b></h1>
+                    <p>
+                        <b>Wired Beauty</b>
+                        as of today is a saas based start-up co-founded by Stanislas and Sophie, two beauty experts
+                        who
+                        become friends while working toghether at
+                        <b>l’Oréal</b>.
+                    </p>
+                    <br>
+                    <div>
+                        <a href="{{ path('index_about_us') }}" class="text-decoration-none text-white cta-primary-a2">Discover</a>
                     </div>
                 </div>
-                <div class="col d-inline-flex mt-4 text-center mt-5 mx-auto">
+                <div class="col d-inline-flex mt-4 text-center mt-5">
                     <div class="mx-auto">
                         <img src="{{ asset('images/library/sophie.png') }}" class="img-fluid" alt="Sophie">
                         <h5 class="pt-3"><b>Sophie le Tanneur</b></h5>
@@ -126,8 +125,10 @@
                         digitally enabled methodology could in the future allow syndicated studies on very large
                         cohorts.
                     </p>
-                    <button class="cta-primary-1"><a class="text-decoration-none text-white"
-                                                     href="{{ path('studies_and_services') }}">Read more</a></button>
+                    <div class="mt-5">
+                        <a href="{{ path('studies_and_services') }}"
+                           class="text-decoration-none text-white cta-primary-a2">Discover</a>
+                    </div>
                 </div>
                 <div id="radio_bar_right" class="col">
                     <svg id="traits" xmlns="http://www.w3.org/2000/svg" width="204.5" height="14"
@@ -159,8 +160,10 @@
                         markers
                         to dermocosmetic lab as well as a smart app in order to also harvest consumer perception.
                     </p>
-                    <button class="cta-primary-1"><a href="{{ path('our_solution') }}"
-                                                     class="text-decoration-none text-white">Learn more</a></button>
+                    <div class="mt-5">
+                        <a href="{{ path('our_solution') }}" class="text-decoration-none text-white cta-primary-a2">Learn
+                            more</a>
+                    </div>
                 </div>
                 <div class="col col-md-1" id="hide_col"></div>
                 <div class="col mt-5">
@@ -174,13 +177,13 @@
                 <div class="col">
                     <div class="col d-flex text-center">
                         <div>
-                            <img src="{{ asset('images/library/page_accueil/synelvia.png') }}" class="img-fluid"
-                                 alt="Synelvia" width="250">
+                            <img src="{{ asset('images/library/page_accueil/synelvia.png') }}"
+                                 alt="Synelvia" width="140">
                             <h5 class="pt-3">Synelvia</h5>
                         </div>
                         <div class="ms-5">
                             <img src="{{ asset('images/library/page_accueil/Assistance_publique_Hôpitaux_de_Paris.png') }}"
-                                 class="img-fluid" alt="Assist">
+                                 alt="Assist">
                             <h5 class="pt-3">Assistance publique Hôpitaux de Paris</h5>
                         </div>
                     </div>
@@ -204,7 +207,7 @@
                 </div>
             </div>
 
-            <div class="row mb-5" id="Press">
+            <div class="row mb-5">
                 <div id="radio_bar" class="col col-md-2">
                     <svg id="traits" xmlns="http://www.w3.org/2000/svg" width="204.5" height="14"
                          viewBox="0 0 204.5 14">

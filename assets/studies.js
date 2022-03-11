@@ -11,15 +11,15 @@ let bigImg = document.getElementById('big_img');
 imgSteps2.style.display = 'none';
 
 btnWithoutWB.onclick = function () {
-    document.getElementById('parentBtnWithoutWB').className = "cta-primary-1";
-    document.getElementById('parentBtnWithWB').className = "cta-primary-disabled";
+    btnWithoutWB.className = "cta-primary-a2";
+    btnWithWB.className = "cta-primary-a2-disabled";
     imgSteps1.style.display = 'inline';
     imgSteps2.style.display = 'none';
 }
 
 btnWithWB.onclick = function () {
-    document.getElementById('parentBtnWithoutWB').className = "cta-primary-disabled";
-    document.getElementById('parentBtnWithWB').className = "cta-primary-1";
+    btnWithoutWB.className = "cta-primary-a2-disabled";
+    btnWithWB.className = "cta-primary-a2";
     imgSteps1.style.display = 'none';
     imgSteps2.style.display = 'inline';
 }
