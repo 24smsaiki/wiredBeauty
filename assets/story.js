@@ -201,3 +201,65 @@ btnWilliam.onclick = function () {
     btnWilliam.style.opacity = '100%';
     imgWilliam.style.display = 'inline';
 }
+
+let parag0 = document.getElementById("parag_0");
+let header = document.getElementById("header");
+let parag1 = document.getElementById("parag_1");
+let header2 = document.getElementById("header2");
+let parag2 = document.getElementById("parag_2");
+let header3 = document.getElementById("header3");
+let parag3 = document.getElementById("parag_3");
+let header4 = document.getElementById("header4");
+let parag4 = document.getElementById("parag_4");
+let header5 = document.getElementById("header5");
+let parag5 = document.getElementById("parag_5");
+
+header.onmouseover = function () {
+    parag0.style.display = 'none';
+    parag1.style.display = 'block';
+}
+
+header.onmouseout = function () {
+    parag0.style.display = 'block';
+    parag1.style.display = 'none';
+}
+
+header2.onmouseover = function () {
+    parag0.style.display = 'none';
+    parag2.style.display = 'block';
+}
+
+header2.onmouseout = function () {
+    parag0.style.display = 'block';
+    parag2.style.display = 'none';
+}
+
+header3.onmouseover = function () {
+    parag0.style.display = 'none';
+    parag3.style.display = 'block';
+}
+
+header3.onmouseout = function () {
+    parag0.style.display = 'block';
+    parag3.style.display = 'none';
+}
+
+header4.onmouseover = function () {
+    parag0.style.display = 'none';
+    parag4.style.display = 'block';
+}
+
+header4.onmouseout = function () {
+    parag0.style.display = 'block';
+    parag4.style.display = 'none';
+}
+
+header5.onmouseover = function () {
+    parag0.style.display = 'none';
+    parag5.style.display = 'block';
+}
+
+header5.onmouseout = function () {
+    parag0.style.display = 'block';
+    parag5.style.display = 'none';
+}
