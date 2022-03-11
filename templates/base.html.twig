@@ -27,7 +27,7 @@
 
     {% block body %}{% endblock %}
 
-    {% if app.user is not null and "ROLE_ADMIN" not in app.user.roles %}
+    {% if hide_navbar is not defined or is_granted("ROLE_ADMIN") == false %}
         {% include 'components/footer.html.twig' %}
     {% endif %}
 
