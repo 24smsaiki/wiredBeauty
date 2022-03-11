@@ -72,15 +72,15 @@ class ChartGeneratorController extends AbstractController
         
     }
 
-    public function chart($type,$arrayX,$arrayY){
+    public function chart($type,$arrayX,$arrayY,$color){
         $chart = $this->chartBuilder->createChart($type);
             $chart->setData([
                 'labels' => $arrayX,
                 'datasets' => [
                     [
                         'label' => 'My First dataset',
-                        'backgroundColor' => 'rgb(255, 99, 132)',
-                        'borderColor' => 'rgb(255, 99, 132)',
+                        'backgroundColor' => $color,
+                        'borderColor' => $color,
                         'data' => $arrayY,
                     ],
                 ],
@@ -144,15 +144,21 @@ class ChartGeneratorController extends AbstractController
         
             $scoreAverageArray = $this->average('scoreSkinbiosense');
             $average = array_sum($scoreAverageArray) / count($scoreAverageArray);
+            #731459
+#D3D326
+#398A98
+#26D389
+#7A86A1
+#B87F76
             
-            $chart1 = $this->chart(Chart::TYPE_LINE,$this->search('id','scoreSkinbiosense',1),$this->search('mesure','scoreSkinbiosense',1));
-            $chart2 = $this->chart(Chart::TYPE_BAR,$this->search('id','scoreSkinbiosense',1),$this->search('zoneCode','scoreSkinbiosense',1));  
+            $chart1 = $this->chart(Chart::TYPE_LINE,$this->search('id','scoreSkinbiosense',1),$this->search('mesure','scoreSkinbiosense',1), '#731459');
+            $chart2 = $this->chart(Chart::TYPE_BAR,$this->search('id','scoreSkinbiosense',1),$this->search('zoneCode','scoreSkinbiosense',1), '#D3D326');  
             
-            $chart3 = $this->chart(Chart::TYPE_LINE,$this->search('id','scoreSkinbiosense',2),$this->search('mesure','scoreSkinbiosense',2));
-            $chart4 = $this->chart(Chart::TYPE_BAR,$this->search('id','scoreSkinbiosense',2),$this->search('zoneCode','scoreSkinbiosense',2));
+            $chart3 = $this->chart(Chart::TYPE_LINE,$this->search('id','scoreSkinbiosense',2),$this->search('mesure','scoreSkinbiosense',2),'#398A98');
+            $chart4 = $this->chart(Chart::TYPE_BAR,$this->search('id','scoreSkinbiosense',2),$this->search('zoneCode','scoreSkinbiosense',2),'#26D389');
             
-            $chart5 = $this->chart(Chart::TYPE_LINE,$this->search('id','scoreSkinbiosense',3),$this->search('mesure','scoreSkinbiosense',3));
-            $chart6 = $this->chart(Chart::TYPE_BAR,$this->search('id','scoreSkinbiosense',3),$this->search('zoneCode','scoreSkinbiosense',3));
+            $chart5 = $this->chart(Chart::TYPE_LINE,$this->search('id','scoreSkinbiosense',3),$this->search('mesure','scoreSkinbiosense',3),'#7A86A1');
+            $chart6 = $this->chart(Chart::TYPE_BAR,$this->search('id','scoreSkinbiosense',3),$this->search('zoneCode','scoreSkinbiosense',3),'#B87F76');
             
             $chart7 = $this->multiAxis(Chart::TYPE_LINE,$chart,$this->search('mesure','scoreSkinbiosense',1),$this->search('mesure','scoreSkinbiosense',2),$this->search('mesure','scoreSkinbiosense',3));
         
