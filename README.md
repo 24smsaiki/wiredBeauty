@@ -12,7 +12,7 @@ docker exec -it symfony.wiredbeauty composer install
 
 ## EXECUTE FIXTURES
 
-docker exec -it symfony.wiredbeauty composer install
+docker exec -it symfony.wiredbeauty php bin/console d:f:l
 
 ## ACCOUNTS 
 
