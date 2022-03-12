@@ -26,6 +26,7 @@ class AppFixtures extends Fixture
             $this->passwordHasher->hashPassword(
                 $user,
                 "azerty"
+
             )
         );
         $user->setEmail('user@user.fr');
